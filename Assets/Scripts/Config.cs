@@ -32,7 +32,6 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
-
 namespace TiltBrush {
 
 // These names are used in our analytics, so they must be protected from obfuscation.

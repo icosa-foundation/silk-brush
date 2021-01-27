@@ -1,0 +1,17 @@
+{
+    "name": "TiltBrush",
+    "references": [
+        "GUID:4fceabee142211847af2fd03ccecfeb1",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:fd4abe4ffe74ef1448afe15c6cb36bb7"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
