@@ -12,5 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: 07df4d63df340f74ca58824df3cab9ea
   m_configObjects:
+    WebXR.Settings: {fileID: 11400000, guid: a3425444a2ec9da43abfe24960483570, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0bc2f746362052a4d821cb296f4c680d,
       type: 2}

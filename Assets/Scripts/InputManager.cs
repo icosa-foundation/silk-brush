@@ -456,6 +456,7 @@ public class InputManager : MonoBehaviour {
         // Create new one controller infos.
         CreateControllerInfos();
 
+        /*
         // Swap geometry if any of our controllers is a logipen.
         bool foundLogipen = false;
         for (int i = 0; i < m_ControllerInfos.Length; ++i) {
@@ -466,6 +467,7 @@ public class InputManager : MonoBehaviour {
             foundLogipen = foundLogipen || pen.IsPen;
           }
         }
+        */
 
         // Initialize handedness.
         // The logitech pen stomps handedness because it is a handed controller, so don't
