@@ -28,7 +28,7 @@ public class GameMusic {
 // TODO: mutable struct is an accident waiting to happen; replace with class
 public class AudioManager : MonoBehaviour {
   class AudioLoop {
-    public GvrAudioSource m_GvrAudioSource;
+    //public GvrAudioSource m_GvrAudioSource;
     // This is null if and only if the source is not being used.
     public string m_LoopName;
   }
@@ -50,7 +50,7 @@ public class AudioManager : MonoBehaviour {
 
   [SerializeField] private GameObject m_AudioOneShotPrefab;
   [SerializeField] private int m_NumAudioOneShots;
-  private GvrAudioSource[] m_AudioOneShots;
+  //private GvrAudioSource[] m_AudioOneShots;
   private int m_NextAvailableAudioOneShot;
 
   [SerializeField] private GameObject m_AudioLoopPrefab;
@@ -196,7 +196,7 @@ public class AudioManager : MonoBehaviour {
     Transform audioParent = new GameObject("AudioManager Things").transform;
     audioParent.parent = transform;
 
-    m_AudioOneShots = new GvrAudioSource[m_NumAudioOneShots];
+    /*m_AudioOneShots = new GvrAudioSource[m_NumAudioOneShots];
     for (int i = 0; i < m_AudioOneShots.Length; ++i) {
       GameObject audioObj = Instantiate(m_AudioOneShotPrefab, audioParent, true);
       GvrAudioSource audioSource = audioObj.GetComponent<GvrAudioSource>();
@@ -217,7 +217,7 @@ public class AudioManager : MonoBehaviour {
         m_GvrAudioSource = audioSource,
         m_LoopName = null
       };
-    }
+    }*/
     m_RecentlyUsedAudioLoop = 0;
 
     GameObject musicObj = Instantiate(m_MusicPrefab, audioParent, true);
@@ -256,7 +256,7 @@ public class AudioManager : MonoBehaviour {
 
     m_RecentlyUsedAudioLoop = available.Value;
 
-    m_AudioLoops[m_RecentlyUsedAudioLoop].m_GvrAudioSource.gameObject.SetActive(true);
+    /*m_AudioLoops[m_RecentlyUsedAudioLoop].m_GvrAudioSource.gameObject.SetActive(true);
     m_AudioLoops[m_RecentlyUsedAudioLoop].m_GvrAudioSource.volume = fVolume;
     m_AudioLoops[m_RecentlyUsedAudioLoop].m_GvrAudioSource.gainDb = fGain;
     m_AudioLoops[m_RecentlyUsedAudioLoop].m_GvrAudioSource.spatialBlend = fSpatialBlend;
@@ -264,7 +264,7 @@ public class AudioManager : MonoBehaviour {
     m_AudioLoops[m_RecentlyUsedAudioLoop].m_GvrAudioSource.transform.SetParent(targetTransform);
     m_AudioLoops[m_RecentlyUsedAudioLoop].m_GvrAudioSource.transform.localPosition = Vector3.zero;
     m_AudioLoops[m_RecentlyUsedAudioLoop].m_LoopName = sLoopName;
-    m_AudioLoops[m_RecentlyUsedAudioLoop].m_GvrAudioSource.Play();
+    m_AudioLoops[m_RecentlyUsedAudioLoop].m_GvrAudioSource.Play();*/
     return true;
   }
 
@@ -274,30 +274,30 @@ public class AudioManager : MonoBehaviour {
     }
     for (int i = 0; i < m_AudioLoops.Length; i++) {
       if (m_AudioLoops[i].m_LoopName == sLoopName) {
-        m_AudioLoops[i].m_GvrAudioSource.volume = fVolume;
+        //m_AudioLoops[i].m_GvrAudioSource.volume = fVolume;
         return;
       }
     }
   }
 
   public void StopLoop(string sLoopName) {
-    for (int i = 0; i < m_AudioLoops.Length; i++) {
+    /*for (int i = 0; i < m_AudioLoops.Length; i++) {
       if (m_AudioLoops[i].m_LoopName == sLoopName) {
         m_AudioLoops[i].m_GvrAudioSource.Stop();
         m_AudioLoops[i].m_LoopName = null;
         m_AudioLoops[i].m_GvrAudioSource.transform.SetParent(transform);
       }
-    }
+    }*/
   }
 
   public void StopAllLoops() {
-    for (int i = 0; i < m_AudioLoops.Length; i++) {
+    /*for (int i = 0; i < m_AudioLoops.Length; i++) {
       if (m_AudioLoops[i].m_LoopName != null) {
         m_AudioLoops[i].m_GvrAudioSource.Stop();
         m_AudioLoops[i].m_LoopName = null;
         m_AudioLoops[i].m_GvrAudioSource.transform.SetParent(transform);
       }
-    }
+    }*/
   }
 
   public void SelectionHighlightLoop(bool bActive) {
@@ -617,7 +617,7 @@ public class AudioManager : MonoBehaviour {
   public void TriggerOneShot(AudioClip rClip, Vector3 vPos, float fVolume,
       float fSpatialBlend = 1.0f, float fGain = 0.0f) {
     if (Enabled) {
-      m_AudioOneShots[m_NextAvailableAudioOneShot].gameObject.SetActive(true);
+      /*m_AudioOneShots[m_NextAvailableAudioOneShot].gameObject.SetActive(true);
       m_AudioOneShots[m_NextAvailableAudioOneShot].volume = fVolume;
       m_AudioOneShots[m_NextAvailableAudioOneShot].gainDb = fGain;
       m_AudioOneShots[m_NextAvailableAudioOneShot].spatialBlend = fSpatialBlend;
@@ -626,14 +626,14 @@ public class AudioManager : MonoBehaviour {
       m_AudioOneShots[m_NextAvailableAudioOneShot].Play();
 
       ++m_NextAvailableAudioOneShot;
-      m_NextAvailableAudioOneShot %= m_AudioOneShots.Length;
+      m_NextAvailableAudioOneShot %= m_AudioOneShots.Length;*/
     }
   }
 
   public void StopAudio() {
-    foreach (GvrAudioSource s in m_AudioOneShots) {
+    /*foreach (GvrAudioSource s in m_AudioOneShots) {
       s.Stop();
-    }
+    }*/
   }
 }
 }  // namespace TiltBrush

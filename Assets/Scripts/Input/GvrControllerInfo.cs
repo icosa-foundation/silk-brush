@@ -1,3 +1,4 @@
+#if !UNITY_WEBGL
 // Copyright 2020 The Tilt Brush Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -231,3 +232,4 @@ public class GvrControllerInfo : ControllerInfo {
   }
 }
 } // namespace TiltBrush
+#endif

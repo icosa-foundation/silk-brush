@@ -52,7 +52,7 @@ public class PointerScript : MonoBehaviour {
   [SerializeField] private bool m_PreviewLineEnabled;
   [SerializeField] private float m_PreviewLineControlPointLife = 1.0f;
   [SerializeField] private float m_PreviewLineIdealLength = 1.0f;
-  [SerializeField] private GvrAudioSource[] m_AudioSources;
+  //[SerializeField] private GvrAudioSource[] m_AudioSources;
   [SerializeField] private Vector2 m_BrushAudioPitchVelocityRange;
   [SerializeField] private AudioClip m_BrushPlaybackAudioClip;
 
@@ -267,6 +267,7 @@ public class PointerScript : MonoBehaviour {
   }
 
   void Update() {
+    /*
     //update brush audio
     if (m_AudioSources.Length > 0) {
       //smooth volume and pitch out a bit from frame to frame
@@ -285,6 +286,7 @@ public class PointerScript : MonoBehaviour {
         m_AudioSources[i].pitch += fPitchAdjust;
       }
     }
+  */
   }
 
   // Defines volume of a specific layer, given the total volume of the brush;
@@ -489,7 +491,7 @@ public class PointerScript : MonoBehaviour {
 
     UpdateLineVisuals();
 
-    // Update desired brush audio
+    /* Update desired brush audio
     if (m_AudioSources.Length > 0) {
       float fMovementSpeed = Vector3.Distance(m_PreviousPosition, transform.position) /
         Time.deltaTime;
@@ -501,7 +503,7 @@ public class PointerScript : MonoBehaviour {
       float fPitchRangeRange = m_BrushAudioPitchVelocityRange.y - m_BrushAudioPitchVelocityRange.x;
       float fPitchRatio = Mathf.Clamp01((fMovementSpeed - m_BrushAudioPitchVelocityRange.x) / fPitchRangeRange);
       m_AudioPitchDesired = m_BrushAudioBasePitch + (fPitchRatio * m_BrushAudioMaxPitchShift);
-    }
+    } */
   }
 
   /// Playback case:
@@ -918,7 +920,7 @@ public class PointerScript : MonoBehaviour {
   }
 
   public void ResetAudio() {
-    for (int i = 0; i < m_AudioSources.Length; i++) {
+    /*for (int i = 0; i < m_AudioSources.Length; i++) {
       m_AudioSources[i].Stop();
       if (m_CurrentBrush != null) {
         if (i < m_CurrentBrush.m_BrushAudioLayers.Length) {
@@ -947,18 +949,18 @@ public class PointerScript : MonoBehaviour {
           && AudioManager.Enabled) {
         m_AudioSources[i].Play();
       }
-    }
+    }*/
   }
 
   void SilenceAudio() {
-    if (m_AudioSources.Length > 0){
+    /*if (m_AudioSources.Length > 0){
       m_AudioVolumeDesired = 0.0f;
       m_AudioPitchDesired = 1.0f;
-    }
+    }*/
   }
 
   public void SetAudioClipForPlayback() {
-    for (int i=0; i<m_AudioSources.Length; i++) {
+    /*for (int i=0; i<m_AudioSources.Length; i++) {
       m_AudioSources[i].Stop();
     }
     if (m_AudioSources.Length > 0  && m_AudioSources[0] != null) {
@@ -970,7 +972,7 @@ public class PointerScript : MonoBehaviour {
       if (AudioManager.Enabled) {
         m_AudioSources[0].Play();
       }
-    }
+    }*/
   }
 
   void OnDrawGizmos() {

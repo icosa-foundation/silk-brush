@@ -290,11 +290,6 @@ namespace TiltBrush
       OVRManager.VrFocusLost += () => { OnInputFocus(false); };
 #endif // OCULUS_SUPPORTED
             }
-            else if (App.Config.m_SdkMode == SdkMode.Gvr)
-            {
-                var brushGeom = InputManager.Brush.Geometry;
-                GvrControllerInput.OnPostControllerInputUpdated += OnNewPoses;
-            }
 
             if (m_NeedsToAttachConsoleScript && m_VrControls != null)
             {
@@ -637,10 +632,6 @@ namespace TiltBrush
             if (App.Config.m_SdkMode == SdkMode.Oculus)
             {
                 return new OculusControllerInfo(behavior, isLeftHand);
-            }
-            else if (App.Config.m_SdkMode == SdkMode.Gvr)
-            {
-                return new GvrControllerInfo(behavior, isLeftHand);
             }
             else
             {
