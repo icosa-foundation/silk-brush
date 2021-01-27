@@ -15,7 +15,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Valve.VR;
+using WebXR;
 
 using KeyMap = System.Collections.Generic.Dictionary<
   int,
