@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Hjg.Pngcs;
+//using Hjg.Pngcs;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -82,7 +82,8 @@ public class GifEncodeTask {
     m_Thread.Start();
   }
 
-  private void WriteFrameAsPng(DirectoryInfo di, int i) {
+  /*
+    private void WriteFrameAsPng(DirectoryInfo di, int i) {
     Color32[] frame = m_Frames[i];
     string filename = Path.Combine(di.FullName, string.Format("{0:00}.png", i));
     ImageInfo imi = new ImageInfo(m_GifWidth, m_GifHeight, 8, false);
@@ -102,7 +103,7 @@ public class GifEncodeTask {
 
     png.End();
   }
-
+  */
   private void Run() {
     m_ErrorMessage = null;
     try {
@@ -130,7 +131,7 @@ public class GifEncodeTask {
       }
       if (di != null) {
         for (int i = 0; i < m_Frames.Count; ++i) {
-          WriteFrameAsPng(di, i);
+          //WriteFrameAsPng(di, i);
         }
       }
     }

@@ -156,7 +156,7 @@ public class VisualizerScript : MonoBehaviour {
           EnableMic(true);
         }
 
-#if !UNITY_ANDROID
+#if !UNITY_ANDROID && !UNITY_WEBGL
         //start playing on audio source when mic is ready to go
         if (Microphone.IsRecording("") && (Microphone.GetPosition("") > 0) && !m_AudioSource.isPlaying) {
           m_AudioSource.Play();
@@ -172,7 +172,7 @@ public class VisualizerScript : MonoBehaviour {
   }
 
   void EnableMic(bool bEnable) {
-#if !UNITY_ANDROID
+#if !UNITY_ANDROID && !UNITY_WEBGL
     if (bEnable) {
       m_AudioSource.Stop();
       m_AudioSource.clip = Microphone.Start("", true, m_MicResetDuration + 1, 44100);
@@ -183,9 +183,9 @@ public class VisualizerScript : MonoBehaviour {
       m_AudioSource.outputAudioMixerGroup = m_MasterAudioMixerGroup;
     }
 #endif
-  }
+        }
 
-  void UpdateShaders() {
+        void UpdateShaders() {
     // Update shaders
     Shader.SetGlobalVector("_FFT", new Vector4(m_SpectrumFloats[4], m_SpectrumFloats[16], m_SpectrumFloats[64], m_SpectrumFloats[256]));
     Shader.SetGlobalVector("_FFTAccumulated", new Vector4(m_SpectrumFloatsAccumulated[4], m_SpectrumFloatsAccumulated[16], m_SpectrumFloatsAccumulated[64], m_SpectrumFloatsAccumulated[256]));

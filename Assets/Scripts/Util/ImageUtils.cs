@@ -205,108 +205,111 @@ static public class ImageUtils {
   }
 
   static RawImage _FromPng(byte[] pngData, string filename) {
-    // TODO: test the untested branches
-    using (var stream = new MemoryStream(pngData)) {
-      var png = new Hjg.Pngcs.PngReader(stream, filename);
-      png.SetUnpackedMode(true);
+            /*
+            // TODO: test the untested branches
+            using (var stream = new MemoryStream(pngData)) {
+              var png = new Hjg.Pngcs.PngReader(stream, filename);
+              png.SetUnpackedMode(true);
 
-      int rows = png.ImgInfo.Rows;
-      int cols = png.ImgInfo.Cols;
-      int chans = png.ImgInfo.Channels;
+              int rows = png.ImgInfo.Rows;
+              int cols = png.ImgInfo.Cols;
+              int chans = png.ImgInfo.Channels;
 
-      Color32[] buf = new Color32[rows * cols];
+              Color32[] buf = new Color32[rows * cols];
 
-      if (png.ImgInfo.Indexed) {
-        var plte = png.GetMetadata().GetPLTE();
+              if (png.ImgInfo.Indexed) {
+                var plte = png.GetMetadata().GetPLTE();
 
-        byte[] alphas = new byte[256];
-        {
-          for (int i = 0; i < 256; ++i) {
-            alphas[i] = 255;
-          }
-          var trns = png.GetMetadata().GetTRNS();
-          if (trns != null) {
-            // might be smaller than 256
-            int[] palette = trns.GetPalletteAlpha();
-            for (int i = 0; i < palette.Length; ++i) {
-              alphas[i] = (byte)palette[i];
-            }
-          }
-        }
+                byte[] alphas = new byte[256];
+                {
+                  for (int i = 0; i < 256; ++i) {
+                    alphas[i] = 255;
+                  }
+                  var trns = png.GetMetadata().GetTRNS();
+                  if (trns != null) {
+                    // might be smaller than 256
+                    int[] palette = trns.GetPalletteAlpha();
+                    for (int i = 0; i < palette.Length; ++i) {
+                      alphas[i] = (byte)palette[i];
+                    }
+                  }
+                }
 
-        byte[] line = null;
-        int[] rgb = new int[3];
-        for (int r = 0; r < rows; ++r) {
-          line = png.ReadRowByte(line, r);
-          for (int c = 0; c < cols; ++c) {
-            int iEntry = line[c];
-            plte.GetEntryRgb(iEntry, rgb);
-            byte alpha = alphas[iEntry];
-            buf[(rows - r - 1) * cols + c] = new Color32((byte)rgb[0], (byte)rgb[1], (byte)rgb[2], alpha);
-          }
-        }
-      } else if (png.ImgInfo.Greyscale && !png.ImgInfo.Alpha) {
-        Debug.Assert(chans == 1);
-        Debug.Assert(png.ImgInfo.BitDepth <= 8, "Unsupported: 16-bit grey");
+                byte[] line = null;
+                int[] rgb = new int[3];
+                for (int r = 0; r < rows; ++r) {
+                  line = png.ReadRowByte(line, r);
+                  for (int c = 0; c < cols; ++c) {
+                    int iEntry = line[c];
+                    plte.GetEntryRgb(iEntry, rgb);
+                    byte alpha = alphas[iEntry];
+                    buf[(rows - r - 1) * cols + c] = new Color32((byte)rgb[0], (byte)rgb[1], (byte)rgb[2], alpha);
+                  }
+                }
+              } else if (png.ImgInfo.Greyscale && !png.ImgInfo.Alpha) {
+                Debug.Assert(chans == 1);
+                Debug.Assert(png.ImgInfo.BitDepth <= 8, "Unsupported: 16-bit grey");
 
-        byte[] line = null;
-        for (int r = 0; r < rows; ++r) {
-          line = png.ReadRowByte(line, r);
-          for (int c = 0; c < cols; ++c) {
-            buf[(rows - r - 1) * cols + c] = new Color32(line[c], line[c], line[c], 255);
-          }
-        }
-      } else if (png.ImgInfo.Greyscale && png.ImgInfo.Alpha) {
-        Debug.Assert(chans == 2);
-        Debug.Assert(png.ImgInfo.BitDepth <= 8, "Unsupported: 16-bit grey");
-        Debug.Assert(false, "currently unsupported: grayscale alpha");
+                byte[] line = null;
+                for (int r = 0; r < rows; ++r) {
+                  line = png.ReadRowByte(line, r);
+                  for (int c = 0; c < cols; ++c) {
+                    buf[(rows - r - 1) * cols + c] = new Color32(line[c], line[c], line[c], 255);
+                  }
+                }
+              } else if (png.ImgInfo.Greyscale && png.ImgInfo.Alpha) {
+                Debug.Assert(chans == 2);
+                Debug.Assert(png.ImgInfo.BitDepth <= 8, "Unsupported: 16-bit grey");
+                Debug.Assert(false, "currently unsupported: grayscale alpha");
 
-        byte[] line = null;
-        for (int r = 0; r < rows; ++r) {
-          line = png.ReadRowByte(line, r);
-          for (int c = 0; c < cols; ++c) {
-            int i = c * chans;
-            buf[(rows - r - 1) * cols + c] = new Color32(line[i], line[i], line[i], line[i + 1]);
-          }
-        }
-      } else if (chans == 3 || chans == 4) {
-        // Can use ReadRowByte() if bitDepth <= 8
-        if (png.ImgInfo.BitDepth <= 8) {
-          byte[] line = null;
-          for (int r = 0; r < rows; ++r) {
-            line = png.ReadRowByte(line, r);
-            for (int c = 0; c < cols; ++c) {
-              int ichan = c * chans;
-              buf[(rows - r - 1) * cols + c] = new Color32(
-                  line[ichan], line[ichan+1], line[ichan+2],
-                  (chans == 3) ? (byte)0xff : line[ichan+3]);
-            }
-          }
-        } else {
-          Debug.Assert(png.ImgInfo.BitDepth == 16);
-          Debug.Assert(false, "Untested: 16-bit rgb");
-          var lines = png.ReadRowsInt(0, png.ImgInfo.Rows, 1);
-          for (int r = 0; r < rows; ++r) {
-            int[] line = lines.Scanlines[r];
-            for (int c = 0; c < cols; ++c) {
-              int ichan = c * chans;
-              buf[(rows - r - 1) * cols + c] = new Color32(
-                  (byte)line[ichan], (byte)line[ichan+1], (byte)line[ichan+2],
-                  (byte)((chans == 3) ? 0xff : line[ichan+3]));
-            }
-          }
-        }
-      } else {
-        Debug.Assert(false, "Weird format");
-      }
+                byte[] line = null;
+                for (int r = 0; r < rows; ++r) {
+                  line = png.ReadRowByte(line, r);
+                  for (int c = 0; c < cols; ++c) {
+                    int i = c * chans;
+                    buf[(rows - r - 1) * cols + c] = new Color32(line[i], line[i], line[i], line[i + 1]);
+                  }
+                }
+              } else if (chans == 3 || chans == 4) {
+                // Can use ReadRowByte() if bitDepth <= 8
+                if (png.ImgInfo.BitDepth <= 8) {
+                  byte[] line = null;
+                  for (int r = 0; r < rows; ++r) {
+                    line = png.ReadRowByte(line, r);
+                    for (int c = 0; c < cols; ++c) {
+                      int ichan = c * chans;
+                      buf[(rows - r - 1) * cols + c] = new Color32(
+                          line[ichan], line[ichan+1], line[ichan+2],
+                          (chans == 3) ? (byte)0xff : line[ichan+3]);
+                    }
+                  }
+                } else {
+                  Debug.Assert(png.ImgInfo.BitDepth == 16);
+                  Debug.Assert(false, "Untested: 16-bit rgb");
+                  var lines = png.ReadRowsInt(0, png.ImgInfo.Rows, 1);
+                  for (int r = 0; r < rows; ++r) {
+                    int[] line = lines.Scanlines[r];
+                    for (int c = 0; c < cols; ++c) {
+                      int ichan = c * chans;
+                      buf[(rows - r - 1) * cols + c] = new Color32(
+                          (byte)line[ichan], (byte)line[ichan+1], (byte)line[ichan+2],
+                          (byte)((chans == 3) ? 0xff : line[ichan+3]));
+                    }
+                  }
+                }
+              } else {
+                Debug.Assert(false, "Weird format");
+              }
 
-      return new RawImage {
-          ColorData = buf,
-          ColorWidth = cols,
-          ColorHeight = rows,
-          ColorAspect = (rows == 0) ? 1f : ((float)cols / rows)
-      };
-    }
+              return new RawImage {
+                  ColorData = buf,
+                  ColorWidth = cols,
+                  ColorHeight = rows,
+                  ColorAspect = (rows == 0) ? 1f : ((float)cols / rows)
+              };
+            */
+            return null;
+    //}
   }
 
   /// Fetches the url and returns a Texture2D or null.
