@@ -1,4 +1,5 @@
-﻿//The HybridCamera uses Coroutines for rendering, so "Capture" only works correctly when in "Play" mode
+﻿#if UNITY_EDITOR
+//The HybridCamera uses Coroutines for rendering, so "Capture" only works correctly when in "Play" mode
 //Coroutines do not work correctly when in normal "Editor" mode.
 using UnityEditor;
 using UnityEngine;
@@ -38,3 +39,4 @@ public class HybridCameraEditor : Editor
         GUILayout.Label( cam.FinalImage, GUILayout.MaxWidth( 300 ), GUILayout.MaxHeight( 300 ) );
     }
 }
+#endif

@@ -138,7 +138,7 @@ static public class VideoRecorderUtils {
       QualityControls.m_Instance.QualityLevel = m_DebugVideoCaptureQualityLevel;
     }
 
-    App.VrSdk.SetHmdScalingFactor(m_VideoCaptureResolutionScale);
+    //App.VrSdk.SetHmdScalingFactor(m_VideoCaptureResolutionScale);
 
     // Setup SSAA
     RenderWrapper wrapper = recorder.gameObject.GetComponent<RenderWrapper>();
@@ -178,7 +178,7 @@ static public class VideoRecorderUtils {
       QualityControls.m_Instance.QualityLevel = m_PreCaptureQualityLevel;
     }
 
-    App.VrSdk.SetHmdScalingFactor(1.0f);
+    //App.VrSdk.SetHmdScalingFactor(1.0f);
 
     // Stop capturing, reset colors
     m_ActiveVideoRecording.gameObject.GetComponent<RenderWrapper>().SuperSampling =

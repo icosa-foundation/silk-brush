@@ -186,7 +186,7 @@ public class ViewpointScript : MonoBehaviour {
 
   public void ToggleScreenMirroring() {
     m_MirrorModeEnabled = !m_MirrorModeEnabled;
-    App.VrSdk.SetScreenMirroring(m_MirrorModeEnabled);
+    //App.VrSdk.SetScreenMirroring(m_MirrorModeEnabled);
   }
 
   // speed must be > 0
