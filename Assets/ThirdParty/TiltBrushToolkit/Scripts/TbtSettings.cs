@@ -13,7 +13,7 @@
 // limitations under the License.
 
 using System;
-
+using TiltBrush;
 using UnityEngine;
 
 #if TILT_BRUSH
@@ -58,11 +58,11 @@ public class TbtSettings : ScriptableObject {
   }
 
 #if !TILT_BRUSH
-  public static BrushManifest BrushManifest {
+  public static TiltBrushManifest BrushManifest {
     get { return sm_Instance.m_BrushManifest; }
   }
 
-  [SerializeField] private BrushManifest m_BrushManifest = null;
+  [SerializeField] private TiltBrushManifest m_BrushManifest = null;
 #endif
 
   public PbrMaterialInfo m_PbrOpaqueSingleSided;
@@ -76,7 +76,9 @@ public class TbtSettings : ScriptableObject {
     desc = TiltBrush.BrushCatalog.m_Instance.GetBrush(guid);
     return (desc != null);
 #else
-    return m_BrushManifest.BrushesByGuid.TryGetValue(guid, out desc);
+    //return m_BrushManifest.BrushesByGuid.TryGetValue(guid, out desc);
+    desc = null;
+    return false;
 #endif
   }
 

@@ -13,6 +13,7 @@
 // limitations under the License.
 
 using System;
+using TiltBrush;
 
 #if TILT_BRUSH
 using AxisConvention = TiltBrush.AxisConvention;

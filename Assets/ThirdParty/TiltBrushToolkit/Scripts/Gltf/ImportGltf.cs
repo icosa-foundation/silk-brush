@@ -54,6 +54,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 
 using Newtonsoft.Json;
+using TiltBrush;
 using UnityEngine;
 
 using Debug = UnityEngine.Debug;
@@ -62,18 +63,18 @@ using AxisConvention  = TiltBrush.AxisConvention;
 using BrushDescriptor = TiltBrush.BrushDescriptor;
 using Semantic = TiltBrush.GeometryPool.Semantic;
 #else
-using Semantic = TiltBrushToolkit.BrushDescriptor.Semantic;
+using Semantic = TiltBrush.GeometryPool.Semantic;
 #endif
 
 namespace TiltBrushToolkit {
 
-#if TILT_BRUSH
+//#if TILT_BRUSH
 using Null = TiltBrush.Null;
-#else
-public class Null {
-  protected Null() {}
-}
-#endif
+//#else
+//public class Null {
+//  protected Null() {}
+//}
+//#endif
 
 /// A callback that allows users to know when the import process has processed
 /// a gltf material into a Unity material.

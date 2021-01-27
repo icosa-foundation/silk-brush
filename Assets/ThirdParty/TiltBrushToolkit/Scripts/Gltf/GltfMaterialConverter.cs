@@ -17,7 +17,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
-
+using TiltBrush;
 using UnityEngine;
 
 #if TILT_BRUSH
@@ -48,13 +48,13 @@ public class GltfMaterialConverter {
     /// "material", if no customizations were needed.
     /// </summary>
     public Material template;
-#if TILT_BRUSH
+//#if TILT_BRUSH
     /// An exportable representation of "template".
     /// null means that this material is not exportable; but currently
     /// this will never be null.
     /// Not needed in TBT because TBT doesn't care about export.
     public BrushDescriptor exportableMaterial;
-#endif
+//#endif
   }
 
   /// <summary>
