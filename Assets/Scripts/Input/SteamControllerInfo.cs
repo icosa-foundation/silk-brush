@@ -11,7 +11,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
+#if !UNITY_WEBGL
 using UnityEngine;
 using Valve.VR;
 
@@ -325,3 +325,4 @@ public class SteamControllerInfo : ControllerInfo {
 }
 
 }  // namespace TiltBrush
+#endif
