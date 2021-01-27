@@ -680,7 +680,7 @@ public class App : MonoBehaviour {
     }
     if (m_RequestedTiltFileQueue.Count == 0) {
       TutorialManager.m_Instance.ActivateControllerTutorial(InputManager.ControllerName.Brush, false);
-      TutorialManager.m_Instance.ActivateControllerTutorial(InputManager.ControllerName.Wand, false);
+      //TutorialManager.m_Instance.ActivateControllerTutorial(InputManager.ControllerName.Wand, false);
     }
 
     ViewpointScript.m_Instance.Init();

@@ -402,7 +402,6 @@ namespace TiltBrush
         // re-calculate m_RoomBoundsPointsCached and m_RoomBoundsAabbCached
         private void RefreshRoomBoundsCache()
         {
-            /* This may still be useful, keeping
             Vector3[] points_RS = null;
 
             if (App.Config.m_SdkMode == SdkMode.Oculus)
@@ -428,7 +427,6 @@ namespace TiltBrush
             // m_RoomBoundsPointsCached = points_RS.
 
             m_RoomBoundsAabbCached = FromPoints(points_RS);
-            */
         }
 
         /// If points is empty, returns the default (empty) Bounds
@@ -932,10 +930,9 @@ namespace TiltBrush
             switch (App.Config.m_SdkMode)
             {
                 case SdkMode.Oculus:
-                case SdkMode.SteamVR:
+                case SdkMode.WebXR:
                     return DoF.Six;
-                case SdkMode.Gvr:
-                    return DoF.Six;
+
                 default:
                     return DoF.None;
             }

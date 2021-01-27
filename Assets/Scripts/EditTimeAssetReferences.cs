@@ -55,6 +55,7 @@ public class EditTimeAssetReferences : ScriptableObject {
     case BuildTarget.StandaloneLinux64:
     case BuildTarget.StandaloneLinuxUniversal:
     case BuildTarget.StandaloneOSX:
+    case BuildTarget.WebGL:
       return m_PlatformConfigPc;
     default:
       throw new ArgumentException("target");
