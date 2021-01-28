@@ -221,7 +221,7 @@ public class SaveLoadScript : MonoBehaviour {
     FileUtils.InitializeDirectoryWithUserError(m_SaveDir);
 
     MarkAsAutosaveDone();
-    m_AutosaveThumbnailBytes = m_AutosaveThumbnail.EncodeToPNG();
+    //m_AutosaveThumbnailBytes = m_AutosaveThumbnail.EncodeToPNG(); No PNG encoding for now
 
     SketchMemoryScript.m_Instance.OperationStackChanged += SketchChanged;
   }

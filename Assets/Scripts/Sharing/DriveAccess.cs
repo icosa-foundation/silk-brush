@@ -102,7 +102,8 @@ public class DriveAccess {
       case RuntimePlatform.Android:
         return GetAndroidId();
       default:
-        return GetPcId();
+        //return GetPcId();
+        return "";
     }
   }
 

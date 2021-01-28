@@ -60,7 +60,9 @@ public class VrControllers : MonoBehaviour {
 
   public BaseControllerBehavior[] GetBehaviors() {
     Debug.Assert((int)m_Wand.ControllerName == 0);
+            Debug.Log((int)m_Wand.ControllerName);
     Debug.Assert((int)m_Brush.ControllerName == 1);
+            Debug.Log((int)m_Brush.ControllerName);
     // The array is indexed by ControllerName, so the order here is important!
     return new BaseControllerBehavior[] { m_Wand, m_Brush };
   }

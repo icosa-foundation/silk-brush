@@ -56,8 +56,8 @@ public static class TurnOffGpuEmulation {
   static void Execute() {
     if (Enabled) {
       if (!Menu.GetChecked(kGpuMenuString)) {
-        EditorApplication.ExecuteMenuItem(kGpuMenuString);
-        Debug.LogWarning("GPU Emulation was turned on; turning off.");
+        //EditorApplication.ExecuteMenuItem(kGpuMenuString); I think I deleted this already
+        //Debug.LogWarning("GPU Emulation was turned on; turning off.");
       }
     }
   }

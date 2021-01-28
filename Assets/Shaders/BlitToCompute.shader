@@ -86,5 +86,7 @@ Shader "Hidden/BlitToCompute"
       }
       ENDCG
     }
+
   }
+  Fallback "Standard"
 }
