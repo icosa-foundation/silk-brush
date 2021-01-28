@@ -587,7 +587,7 @@ public class App : MonoBehaviour {
       CreateErrorDialog();
     } else {
       Debug.LogFormat("Sdk mode: {0} XRDevice.model: {1}",
-                      App.Config.m_SdkMode, UnityEngine.XR.XRDevice.model);
+                      App.Config.m_SdkMode, "{WebXR Model}");
     }
 
     m_TargetFrameRate = VrSdk.GetHmdTargetFrameRate();

@@ -447,7 +447,8 @@ namespace TiltBrush
         void Update()
         {
             // Force style to WMR for now
-            App.VrSdk.SetControllerStyle(ControllerStyle.Wmr);
+            if (App.VrSdk.VrControls == null)
+                App.VrSdk.SetControllerStyle(ControllerStyle.Wmr);
 
             // Update controller infos.
             for (int i = 0; i < m_ControllerInfos.Length; ++i)

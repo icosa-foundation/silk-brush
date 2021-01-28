@@ -266,6 +266,10 @@ namespace TiltBrush
                 // Offset for head position, since camera height is set by the VR system.
                 m_VrCamera.transform.localPosition = new Vector3(0f, 1.5f, 0f);
             }
+            else if (App.Config.m_SdkMode == SdkMode.WebXR)
+            {
+                SetControllerStyle(ControllerStyle.Wmr); //Force WMR for now
+            }
             else
             {
                 // ---------------------------------------------------------------------------------------- //
@@ -491,6 +495,7 @@ namespace TiltBrush
         // SetControllerStyle should be smart enough to figure that out.
         public void SetControllerStyle(ControllerStyle style)
         {
+            Debug.Log("Calling SetControllerStyle");
             // Clear console parent in case we're switching controllers.
             if (ControllerConsoleScript.m_Instance != null)
             {
