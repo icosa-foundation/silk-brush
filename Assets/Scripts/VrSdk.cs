@@ -636,6 +636,10 @@ namespace TiltBrush
             {
                 return new OculusControllerInfo(behavior, isLeftHand);
             }
+            else if (App.Config.m_SdkMode == SdkMode.WebXR)
+            {
+                return new WebXRControllerInfo(behavior, isLeftHand);
+            }
             else
             {
                 return new NonVrControllerInfo(behavior);

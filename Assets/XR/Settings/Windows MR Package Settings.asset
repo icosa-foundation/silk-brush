@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7246032756213797889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed912223f7b3af74d8e196b2a4e662b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DepthBufferFormat: 1
+  UseSharedDepthBuffer: 0
+--- !u!114 &-3146165381753516936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed912223f7b3af74d8e196b2a4e662b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DepthBufferFormat: 0
+  UseSharedDepthBuffer: 0
+--- !u!114 &-2330171061179470918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed912223f7b3af74d8e196b2a4e662b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DepthBufferFormat: 0
+  UseSharedDepthBuffer: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e679265d16d650945812b915bb9d5cc3, type: 3}
+  m_Name: Windows MR Package Settings
+  m_EditorClassIdentifier: 
+  Keys: 0e0000000d00000001000000
+  Values:
+  - {fileID: -7246032756213797889}
+  - {fileID: -3146165381753516936}
+  - {fileID: -2330171061179470918}
+  BuildValues: []
