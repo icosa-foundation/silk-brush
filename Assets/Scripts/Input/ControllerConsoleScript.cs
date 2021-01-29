@@ -214,6 +214,7 @@ public class ControllerConsoleScript : MonoBehaviour {
         m_ActivateTimer -= Time.deltaTime * m_ActivateSpeed;
         if (m_ActivateTimer <= 0.0f) {
           m_ActivateTimer = 0.0f;
+          Debug.Log("I'm over here");
           SetState(State.Disabled);
         }
       }
@@ -222,7 +223,7 @@ public class ControllerConsoleScript : MonoBehaviour {
     }
   }
 
-  void SetState(State rDesiredState) {
+  void SetState(State rDesiredState) {            
     switch (rDesiredState) {
     case State.Disabled:
       m_RenderablesParent.gameObject.SetActive(false);

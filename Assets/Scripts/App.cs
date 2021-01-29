@@ -48,11 +48,11 @@ public class App : MonoBehaviour {
   // As a minimum, you should change kAppDisplayName.
   
   // This is the name of the app, as displayed to the users running it.
-  public const string kAppDisplayName = "Open Source Tilt Brush";
+  public const string kAppDisplayName = "Silk Brush";
   // The vendor name - used for naming android builds - shouldn't have spaces.
-  public const string kVendorName = "SomeCompany";
+  public const string kVendorName = "msub2";
   // The vendor name - used for the company name in builds and fbx output. Can have spaces.
-  public const string kDisplayVendorName = "Some Company";
+  public const string kDisplayVendorName = "msub2";
   // This is the App name used when speaking to Google services
   public const string kGoogleServicesAppName = kAppDisplayName;
   // The name of the configuration file. You may want to change this if you think your users may

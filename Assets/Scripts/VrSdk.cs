@@ -708,6 +708,7 @@ namespace TiltBrush
             {
                 case SdkMode.Oculus:
                 case SdkMode.SteamVR:
+                case SdkMode.WebXR:
                     return DoF.Six;
 
                 case SdkMode.Gvr:

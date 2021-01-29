@@ -40,6 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000011949354466}
   - component: {fileID: 114000011240657384}
+  - component: {fileID: 1479809584682781803}
   m_Layer: 0
   m_Name: SteamWmrControls
   m_TagString: Untagged
@@ -55,7 +56,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000010438099326}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.1}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 4000010267600154}
@@ -88,6 +89,18 @@ MonoBehaviour:
   m_TouchpadActivationRange: {x: -0.8, y: 0.8}
   m_LogitechPenActivationRange: {x: 0, y: 1}
   m_WandRotateJoystickPercent: 0.7
+--- !u!114 &1479809584682781803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010438099326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9b402cc209d934892afe3dd3c8d0a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1000012863469616
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,6 +112,7 @@ GameObject:
   - component: {fileID: 4000010915250370}
   - component: {fileID: 114000013332822508}
   - component: {fileID: 114000013512061632}
+  - component: {fileID: 4983754374125726131}
   m_Layer: 14
   m_Name: Controller (brush)
   m_TagString: Untagged
@@ -155,6 +169,19 @@ MonoBehaviour:
     type: 2}
   m_TriggerMaterialInactive: {fileID: 2100000, guid: 0febb0642a50e644ab2b4f075fe32a9b,
     type: 2}
+--- !u!114 &4983754374125726131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012863469616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f018e4326e3394db56a8af0ea29dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hand: 1
 --- !u!1 &1000013186975256
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,6 +193,7 @@ GameObject:
   - component: {fileID: 4000010267600154}
   - component: {fileID: 114000010919708240}
   - component: {fileID: 114000011013631904}
+  - component: {fileID: 7086576302309089470}
   m_Layer: 14
   m_Name: Controller (wand)
   m_TagString: Untagged
@@ -222,3 +250,16 @@ MonoBehaviour:
     type: 2}
   m_TriggerMaterialInactive: {fileID: 2100000, guid: 0febb0642a50e644ab2b4f075fe32a9b,
     type: 2}
+--- !u!114 &7086576302309089470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013186975256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f018e4326e3394db56a8af0ea29dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hand: 0
