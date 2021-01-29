@@ -31,12 +31,7 @@ public class WebXRPoseLink : MonoBehaviour
 
     private void UpdatePose()
     {
-        Vector3 adjustedPos = controller.localPosition;
-        adjustedPos.z += .5f;
-        transform.localPosition = adjustedPos;
-
-        Vector3 adjustedRot = controller.rotation.eulerAngles;
-        adjustedRot.x += 30;
-        transform.rotation = Quaternion.Euler(adjustedRot);
+        transform.position = controller.position;
+        transform.rotation = controller.rotation;
     }
 }
