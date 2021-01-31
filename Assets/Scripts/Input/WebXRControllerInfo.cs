@@ -59,6 +59,37 @@ namespace TiltBrush
             }
         }
 
+        public bool MapVrTouch(VrInput input)
+        {
+            switch(input)
+            {
+                case VrInput.Directional:
+                case VrInput.Thumbstick:
+                    return controller.GetAxis2D(WebXRController.Axis2DTypes.Thumbstick) != Vector2.zero;
+                case VrInput.Touchpad:
+                    return controller.GetAxis2D(WebXRController.Axis2DTypes.Touchpad) != Vector2.zero;
+
+                case VrInput.Button01:
+                case VrInput.Button04:
+                case VrInput.Button06:
+                    // Pad_Left, Pad_Down, Full pad, (X,A)
+                    return controller.GetButton(WebXRController.ButtonTypes.ButtonA);
+
+                case VrInput.Button02:
+                case VrInput.Button03:
+                case VrInput.Button05:
+                    // Pad_Right, Pad_Up, Application button, (Y,B)
+                    return controller.GetButton(WebXRController.ButtonTypes.ButtonB);
+
+                case VrInput.Any: // Adjust this later
+                    return true;
+
+                default:
+                    Debug.Log("This shouldn't have happened! Bad input enum " + input.ToString());
+                    throw new System.NotImplementedException(); // Ask De-Panther about adding a WebXRController.ButtonTypes.None
+            }
+        }
+
         public override bool IsTrackedObjectValid { get { return m_IsValid; } set { m_IsValid = value; } }
 
         public override float GetGripValue()
@@ -118,8 +149,8 @@ namespace TiltBrush
 
         public override bool GetVrInputTouch(VrInput input)
         {
-            // Are capacitive sensors in the spec? I don't think so, for now at least.
-            return false;
+            // Touch sensors not in spec, use value of buttons != 0 for now
+            return MapVrTouch(input);
         }
 
         public override void TriggerControllerHaptics(float seconds)
