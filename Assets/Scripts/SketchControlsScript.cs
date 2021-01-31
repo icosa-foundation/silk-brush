@@ -902,7 +902,6 @@ public class SketchControlsScript : MonoBehaviour {
 
     //if the pointer manager is processing, we don't want to respond to input
     if (!PointerManager.m_Instance.IsMainPointerProcessingLine()) {
-
       //see if we're grabbing a widget
       UpdateGrab();
 
@@ -2529,8 +2528,8 @@ public class SketchControlsScript : MonoBehaviour {
             Vector3 vToPanel = aAllPanels[i].m_Panel.transform.position - m_CurrentGazeRay.origin;
             vToPanel.Normalize();
             if (!bRequireVisibilityCheck || Vector3.Angle(vToPanel, m_CurrentGazeRay.direction) < m_GazeMaxAngleFromFacing) {
-              if (hasController) {
-                if (aAllPanels[i].m_Panel.HasMeshCollider()) {
+              if (hasController) {                
+                if (aAllPanels[i].m_Panel.HasMeshCollider()) {                  
                   //make sure the angle between the pointer and the panel forward is below our max angle
                   if (Vector3.Angle(aAllPanels[i].m_Panel.transform.forward, m_GazeControllerRay.direction) < m_GazeMaxAngleFromPointing) {
                     //make sure the angle between the user-to-panel and the panel forward is reasonable

@@ -153,6 +153,7 @@ namespace TiltBrush
         /// The real win is getting to use Array.Copy, pointers, etc.
         public static T[] GetBackingArray<T>(this List<T> list)
         {
+#if !UNITY_WEBGL
             var pub = ConvertHelper<List<T>, PublicList<T>>.Convert(list);
             if (pub != null)
             {
@@ -162,6 +163,9 @@ namespace TiltBrush
             {
                 return (T[])sm_items.Get(typeof(List<T>)).GetValue(list);
             }
+#else
+            return (T[])sm_items.Get(typeof(List<T>)).GetValue(list);
+#endif
         }
 
         public static void SetBackingArray<T>(this List<T> list, T[] value)

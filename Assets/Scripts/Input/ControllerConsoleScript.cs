@@ -214,7 +214,6 @@ public class ControllerConsoleScript : MonoBehaviour {
         m_ActivateTimer -= Time.deltaTime * m_ActivateSpeed;
         if (m_ActivateTimer <= 0.0f) {
           m_ActivateTimer = 0.0f;
-          Debug.Log("I'm over here");
           SetState(State.Disabled);
         }
       }

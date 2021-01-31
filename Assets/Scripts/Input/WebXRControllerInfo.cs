@@ -45,7 +45,7 @@ namespace TiltBrush
                     // Pad_Right, Pad_Up, Application button, (Y,B)
                     return WebXRController.ButtonTypes.ButtonB;
 
-                case VrInput.Any:
+                case VrInput.Any: // Adjust this later
                     return WebXRController.ButtonTypes.Trigger
                          | WebXRController.ButtonTypes.Grip
                          | WebXRController.ButtonTypes.Thumbstick
@@ -78,12 +78,12 @@ namespace TiltBrush
 
         public override float GetScrollXDelta()
         {
-            return 0;
+            return controller.GetAxis2D(WebXRController.Axis2DTypes.Thumbstick).x;
         }
 
         public override float GetScrollYDelta()
         {
-            return 0;
+            return controller.GetAxis2D(WebXRController.Axis2DTypes.Thumbstick).y;
         }
 
         public override Vector2 GetThumbStickValue()
@@ -124,7 +124,7 @@ namespace TiltBrush
 
         public override void TriggerControllerHaptics(float seconds)
         {
-            // Also not in the spec.
+            // Oculus browser has haptics support, look into it
             return;
         }
     }

@@ -5,19 +5,14 @@ using WebXR;
 
 public class WebXRPoseLink : MonoBehaviour
 {
-    public enum Hand
-    {
-        Left,
-        Right
-    }
-
-    public Hand hand;
+    
+    public bool isLeft;
     private Transform controller;
     
     // Start is called before the first frame update
     void Start()
     {
-        if (hand == Hand.Left)
+        if (isLeft)
             controller = GameObject.Find("handL").transform;
         else
             controller = GameObject.Find("handR").transform;

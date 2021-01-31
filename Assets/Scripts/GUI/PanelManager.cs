@@ -33,6 +33,7 @@ public struct PanelMapKey {
     switch (mode) {
     case SdkMode.SteamVR:
     case SdkMode.Oculus:
+    case SdkMode.WebXR:
 #if (UNITY_EDITOR || EXPERIMENTAL_ENABLED)
       if (Config.IsExperimental) {
         return m_ModeVrExperimental;
