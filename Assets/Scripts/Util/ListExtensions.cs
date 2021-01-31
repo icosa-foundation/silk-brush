@@ -163,9 +163,8 @@ namespace TiltBrush
             {
                 return (T[])sm_items.Get(typeof(List<T>)).GetValue(list);
             }
-#else
-            return (T[])sm_items.Get(typeof(List<T>)).GetValue(list);
 #endif
+            return (T[])sm_items.Get(typeof(List<T>)).GetValue(list);
         }
 
         public static void SetBackingArray<T>(this List<T> list, T[] value)

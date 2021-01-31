@@ -726,7 +726,7 @@ MonoBehaviour:
   m_maskType: 0
 --- !u!222 &12781055
 CanvasRenderer:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 222054925195418854, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -735,7 +735,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 0
 --- !u!33 &12781056
 MeshFilter:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 3316878, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -2289,7 +2289,7 @@ MeshRenderer:
   m_SortingOrder: 0
 --- !u!222 &103787547
 CanvasRenderer:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 222054925195418854, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -2298,7 +2298,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 0
 --- !u!33 &103787548
 MeshFilter:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 3316878, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -2844,7 +2844,7 @@ MonoBehaviour:
   m_maskType: 0
 --- !u!222 &130210066
 CanvasRenderer:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 222054925195418854, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -2853,7 +2853,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 0
 --- !u!33 &130210067
 MeshFilter:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 3316878, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -3185,7 +3185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_FakeCommandLineArgsInEditor: 
-  m_PlatformConfig: {fileID: 11400000, guid: 0764a106823cbec4e8d75b2816f3cbd3, type: 2}
+  m_PlatformConfig: {fileID: 11400000, guid: 2182971d771ad4647bce85b532fb0873, type: 2}
   m_IsExperimental: 0
   m_SdkMode: 6
   m_AutoProfile: 0
@@ -3198,7 +3198,7 @@ MonoBehaviour:
   m_OdsOutputPrefix: 
   m_ControlsPrefabOverrideOvr: {fileID: 0}
   m_ControlsPrefabOverrideSteamVr: {fileID: 0}
-  m_VersionNumber: 24.0b
+  m_VersionNumber: 0.1.4
   m_BuildStamp: 
   m_SteamVrRenderPrefab: {fileID: 1000010802110602, guid: 80670fed37dd0364db7c72ccc9fb3a8f,
     type: 3}
@@ -3209,7 +3209,7 @@ MonoBehaviour:
   m_AxisManipulationIsResize: 1
   m_LabsButtonOverlayPrefab: {fileID: 1000011763945288, guid: f55ccdf2d51f79f46b3c629c489b698c,
     type: 3}
-  m_GpuIntersectionEnabled: 1
+  m_GpuIntersectionEnabled: 0
   m_AutosaveRestoreEnabled: 0
   m_AllowWidgetPinning: 1
   m_DebugWebRequest: 0
@@ -4957,7 +4957,7 @@ MeshRenderer:
   m_SortingOrder: 0
 --- !u!222 &261597285
 CanvasRenderer:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 222054925195418854, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -4966,7 +4966,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 0
 --- !u!33 &261597286
 MeshFilter:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 3316878, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -5341,7 +5341,7 @@ MonoBehaviour:
   m_maskType: 0
 --- !u!222 &271027827
 CanvasRenderer:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 222054925195418854, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -5350,7 +5350,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 0
 --- !u!33 &271027828
 MeshFilter:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 3316878, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -8231,7 +8231,7 @@ MeshRenderer:
   m_SortingOrder: 0
 --- !u!222 &512959153
 CanvasRenderer:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 222054925195418854, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -8240,7 +8240,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 0
 --- !u!33 &512959154
 MeshFilter:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 3316878, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -10263,6 +10263,7 @@ Transform:
   m_Children:
   - {fileID: 431944651}
   - {fileID: 1583667640}
+  - {fileID: 17776369}
   m_Father: {fileID: 1671124695}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10708,7 +10709,7 @@ MeshRenderer:
   m_SortingOrder: 0
 --- !u!222 &745882612
 CanvasRenderer:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 222054925195418854, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -10717,7 +10718,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 0
 --- !u!33 &745882613
 MeshFilter:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 3316878, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -11673,7 +11674,7 @@ MonoBehaviour:
   m_maskType: 0
 --- !u!222 &825726039
 CanvasRenderer:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 222054925195418854, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -11682,7 +11683,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 0
 --- !u!33 &825726040
 MeshFilter:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 3316878, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -13969,7 +13970,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!222 &1063174774
 CanvasRenderer:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -15134,7 +15135,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1671124695}
+    m_TransformParent: {fileID: 681890008}
     m_Modifications:
     - target: {fileID: 4000011324248280, guid: dedd7823645ca60468aca5f2ff1b9a7f, type: 3}
       propertyPath: m_RootOrder
@@ -15142,7 +15143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013585580318, guid: dedd7823645ca60468aca5f2ff1b9a7f, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4000013585580318, guid: dedd7823645ca60468aca5f2ff1b9a7f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15628,7 +15629,7 @@ MeshRenderer:
   m_SortingOrder: 0
 --- !u!222 &1277487075
 CanvasRenderer:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 222054925195418854, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -15637,7 +15638,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 0
 --- !u!33 &1277487076
 MeshFilter:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 3316878, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -16315,7 +16316,7 @@ GameObject:
   m_IsActive: 1
 --- !u!33 &1317145830
 MeshFilter:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 3339500, guid: 3491f4f01ba6cac47b1633f36d7c6c84,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -16364,7 +16365,7 @@ MeshRenderer:
   m_SortingOrder: 0
 --- !u!222 &1317145832
 CanvasRenderer:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -18082,8 +18083,7 @@ MonoBehaviour:
 --- !u!1 &1476953170
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 100004, guid: 116ce0aee195ce848ab32c0ab75a1588,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
@@ -18103,8 +18103,7 @@ GameObject:
 TextMesh:
   serializedVersion: 3
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 10200000, guid: 116ce0aee195ce848ab32c0ab75a1588,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476953170}
@@ -18125,8 +18124,7 @@ TextMesh:
 --- !u!23 &1476953172
 MeshRenderer:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 2300004, guid: 116ce0aee195ce848ab32c0ab75a1588,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476953170}
@@ -18165,8 +18163,7 @@ MeshRenderer:
 --- !u!4 &1476953173
 Transform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 400004, guid: 116ce0aee195ce848ab32c0ab75a1588,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476953170}
@@ -26068,7 +26065,6 @@ Transform:
   - {fileID: 338825206}
   - {fileID: 1527246408}
   - {fileID: 681890008}
-  - {fileID: 17776369}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27194,7 +27190,7 @@ MonoBehaviour:
   m_TransformGizmoPrefab: {fileID: 100004, guid: 9841c67ebbc439c41990e9f5d3ddcbbb,
     type: 3}
   m_RotationIconPrefab: {fileID: 100000, guid: 72830b8e348ad7649886747f9c168ebc, type: 3}
-  m_GazeMaxAngleFromFacing: 60
+  m_GazeMaxAngleFromFacing: 90
   m_GazeMaxDistance: 10
   m_GazeControllerPointingDistance: 4
   m_GazePanelDectivationDelay: 0.25
@@ -28747,7 +28743,7 @@ MeshRenderer:
   m_SortingOrder: 0
 --- !u!222 &1843353006
 CanvasRenderer:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 222054925195418854, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -28756,7 +28752,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 0
 --- !u!33 &1843353007
 MeshFilter:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 3316878, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -28861,7 +28857,7 @@ GameObject:
   m_IsActive: 1
 --- !u!222 &1877187483
 CanvasRenderer:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 222054925195418854, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -28870,7 +28866,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 0
 --- !u!33 &1877187484
 MeshFilter:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 3316878, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
     type: 3}
   m_PrefabInstance: {fileID: 0}
