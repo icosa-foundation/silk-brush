@@ -47,7 +47,8 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0"
+    "com.unity.modules.xr": "1.0.0",
+    "jillejr.newtonsoft.json-for-unity": "12.0.301"
   },
   "scopedRegistries": [
     {
@@ -58,7 +59,8 @@
         "com.de-panther.webxr",
         "com.de-panther.webxr-input-profiles-loader",
         "com.de-panther.webxr-interactions",
-        "com.openupm"
+        "com.openupm",
+        "jillejr.newtonsoft.json-for-unity"
       ]
     }
   ]

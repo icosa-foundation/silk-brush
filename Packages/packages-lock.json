@@ -175,6 +175,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "jillejr.newtonsoft.json-for-unity": {
+      "version": "12.0.301",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
     "nuget.mono-cecil": {
       "version": "0.1.6-preview",
       "depth": 1,

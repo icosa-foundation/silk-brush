@@ -147,7 +147,7 @@ static public class FileUtils {
 
   ///  Returns true the disk containing the file specified has more space than the spaceRequired.
   public static bool HasFreeSpace(string filePath, ulong spaceRequiredMb = MIN_DISK_SPACE_MB) {
-    if (Application.platform == RuntimePlatform.Android) {
+    /*if (Application.platform == RuntimePlatform.Android) {
       AndroidJavaObject statFs = new AndroidJavaObject("android.os.StatFs",
                                                        Application.persistentDataPath);
       ulong freeBytes = (ulong)statFs.Call<long>("getAvailableBytes");
@@ -182,7 +182,8 @@ static public class FileUtils {
       // Fallback to avoid crashes
       Debug.LogWarning("HasFreeSpace is not implemented for current platform");
       return true;
-    }
+    }*/
+    return true; // We can't rely on win32 functions here, so we'll just set it to true for now.
   }
 
   private static char[] m_SanitizeMap = null;

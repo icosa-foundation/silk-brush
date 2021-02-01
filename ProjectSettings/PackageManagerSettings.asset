@@ -29,6 +29,7 @@ MonoBehaviour:
     - com.de-panther.webxr-input-profiles-loader
     - com.de-panther.webxr-interactions
     - com.openupm
+    - jillejr.newtonsoft.json-for-unity
     m_IsDefault: 0
   m_UserSelectedRegistryName: 
   m_UserAddingNewScopedRegistry: 0
@@ -44,6 +45,7 @@ MonoBehaviour:
       - com.de-panther.webxr-input-profiles-loader
       - com.de-panther.webxr-interactions
       - com.openupm
+      - jillejr.newtonsoft.json-for-unity
       m_IsDefault: 0
     m_Modified: 0
     m_Name: package.openupm.com
@@ -54,4 +56,5 @@ MonoBehaviour:
     - com.de-panther.webxr-input-profiles-loader
     - com.de-panther.webxr-interactions
     - com.openupm
+    - jillejr.newtonsoft.json-for-unity
     m_SelectedScopeIndex: 0

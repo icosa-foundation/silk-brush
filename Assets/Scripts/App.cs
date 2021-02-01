@@ -62,7 +62,7 @@ namespace TiltBrush
         public const string kConfigFileName = "Tilt Brush.cfg";
         // The name of the App folder (In the user's Documents folder) - you may want to share this with
         // the original Tilt Brush, or not.
-        public const string kAppFolderName = "Tilt Brush";
+        public const string kAppFolderName = "Silk Brush";
         // The data folder used on Google Drive.
         public const string kDriveFolderName = kAppDisplayName;
         // Executable Base
@@ -1710,6 +1710,7 @@ namespace TiltBrush
             warning = null;
             try
             {
+                Debug.Log("Attempting first DeserializeObject");
                 return JsonConvert.DeserializeObject<T>(text, new JsonSerializerSettings
                 {
                     MissingMemberHandling = MissingMemberHandling.Error
@@ -1717,6 +1718,7 @@ namespace TiltBrush
             }
             catch (JsonSerializationException e)
             {
+                Debug.Log("Attempting second DeserializeObject");
                 warning = e.Message;
                 return JsonConvert.DeserializeObject<T>(text);
             }
@@ -1735,6 +1737,7 @@ namespace TiltBrush
             if (!File.Exists(configPath))
             {
                 FileUtils.WriteTextFromResources(kDefaultConfigPath, configPath);
+                Debug.Log("Created default config");
             }
         }
 
@@ -1764,7 +1767,7 @@ namespace TiltBrush
 
                 try
                 {
-                    string warning;
+                    string warning;                    
                     m_UserConfig = DeserializeObjectWithWarning<UserConfig>(text, out warning);
                     if (warning != null)
                     {
