@@ -268,7 +268,7 @@ namespace TiltBrush
             }
             else if (App.Config.m_SdkMode == SdkMode.WebXR)
             {
-                SetControllerStyle(ControllerStyle.Wmr); //Force WMR for now
+                SetControllerStyle(ProfileLoader.Instance.GetControllerStyle()); // Set style based off input profile
             }
             else
             {

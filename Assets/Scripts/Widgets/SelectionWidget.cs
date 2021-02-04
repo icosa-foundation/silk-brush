@@ -141,6 +141,10 @@ public class SelectionWidget : GrabWidget {
     if (!PointInCollider(vControllerPos_GS)) {
       return -1;
     }
+    else 
+    {
+      return 1;
+    }
 
     // If the data we've got is old, delete it all.
     if ((Time.frameCount - m_IntersectionFrame) > 3) {

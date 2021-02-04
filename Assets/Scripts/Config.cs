@@ -147,9 +147,8 @@ namespace TiltBrush
             {
                 if (m_VrHardware == TiltBrush.VrHardware.Unset)
                 {
-                    // We currently don't have a good way of finding this before controllers are turned on
-                    // So best to just go with one model and set it again later when we can
-                    m_VrHardware = VrHardware.Wmr;
+                    // Set closest matching VR hardware based off input profile
+                    m_VrHardware = ProfileLoader.Instance.GetVrHardware();
                 }
 
                 return m_VrHardware;
