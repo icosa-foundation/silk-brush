@@ -203,7 +203,7 @@ namespace TiltBrush
                     // Same logic as List<>
                     list.Capacity = Math.Max(Math.Max(list.Capacity * 2, 4), newCount);
                 }
-                /*var pub = ConvertHelper<List<T>, PublicList<T>>.Convert(list);
+                var pub = ConvertHelper<List<T>, PublicList<T>>.Convert(list);
                 if (pub != null)
                 {
                     pub.Count = newCount;
@@ -211,10 +211,6 @@ namespace TiltBrush
                 else
                 {
                     sm_size.Get(typeof(List<T>)).SetValue(list, newCount);
-                }*/
-                for (int i = 0; i < newCount; i++)
-                {
-                    list.Add(default(T));
                 }
             }
             else
