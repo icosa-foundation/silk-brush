@@ -59,7 +59,7 @@ namespace TiltBrush
         public const string kGoogleServicesAppName = kAppDisplayName;
         // The name of the configuration file. You may want to change this if you think your users may
         // want to have a different config file for your edition of the app.
-        public const string kConfigFileName = "Tilt Brush.cfg";
+        public const string kConfigFileName = "Silk Brush.cfg";
         // The name of the App folder (In the user's Documents folder) - you may want to share this with
         // the original Tilt Brush, or not.
         public const string kAppFolderName = "Silk Brush";

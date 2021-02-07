@@ -399,7 +399,6 @@ namespace TiltBrush
         private IEnumerator<Timeslice> SaveLow(
             SceneFileInfo info, bool bNotify = true, SketchSnapshot snapshot = null)
         {
-            Debug.Log("Starting SaveLow");
             Debug.Assert(!SelectionManager.m_Instance.HasSelection);
             if (snapshot != null && info.AssetId != snapshot.AssetId)
             {
@@ -426,7 +425,6 @@ namespace TiltBrush
         private IEnumerator<Timeslice> ThreadedSave(SceneFileInfo fileInfo,
                                                     bool bNotify = true, SketchSnapshot snapshot = null)
         {
-            Debug.Log("Starting ThreadedSave");
             // Cancel any pending transfers of this file.
             var cancelTask = App.DriveSync.CancelTransferAsync(fileInfo.FullPath);
 
