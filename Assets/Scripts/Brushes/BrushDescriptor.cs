@@ -34,11 +34,10 @@ public class BrushDescriptor : ScriptableObject, IExportableMaterial {
   static public ExportGlTF.ExportManifest GltfManifest {
     get {
       if (sm_gltfManifest == null) {
-
         var deserializer = new Newtonsoft.Json.JsonSerializer();
         deserializer.ContractResolver = new CustomJsonContractResolver();
-        string manifestPath = Path.Combine(App.SupportPath(), "exportManifest.json");
-        using (var reader = new Newtonsoft.Json.JsonTextReader(new StreamReader(manifestPath))) {
+        //string manifestPath = Path.Combine(App.SupportPath(), "exportManifest.json");
+        using (var reader = new Newtonsoft.Json.JsonTextReader(new StringReader(Resources.Load<TextAsset>("Support/exportManifest").text))) {
           sm_gltfManifest = deserializer.Deserialize<ExportGlTF.ExportManifest>(reader);
         }
       }

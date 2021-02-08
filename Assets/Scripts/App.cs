@@ -1824,7 +1824,14 @@ namespace TiltBrush
 
         static public string SupportPath()
         {
-            return Path.Combine(PlatformPath(), "Support");
+            if (Application.platform == RuntimePlatform.WebGLPlayer)
+            {
+                return Path.Combine(Application.dataPath, "Support");
+            }
+            else
+            {
+                return Path.Combine(PlatformPath(), "Support");
+            }
         }
 
         /// Returns a parent of UserPath; used to figure out how much path

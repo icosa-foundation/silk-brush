@@ -16,6 +16,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Linq;
 using UnityEngine;
 
@@ -3357,9 +3358,23 @@ public class SketchControlsScript : MonoBehaviour {
         OverlayType.Export, () => {
           // Sort of a kludge: put stuff back into the main canvas
           SelectionManager.m_Instance.ClearActiveSelection();
-          Export.ExportScene();
+          var exportResult = Export.ExportScene();
+          StartCoroutine(DelayedGltfDownload(exportResult));
         }, 0.25f, false, true);
   }
+
+  // GlTF Export stuff
+  [DllImport("__Internal")]
+  private static extern void ExportGltf(string path);
+
+  IEnumerator DelayedGltfDownload(string path) { 
+    while (!File.Exists(path)) { 
+      yield return new WaitForSeconds(1);        
+    }
+    yield return new WaitForSeconds(5); // This seems to be the ballpark required wait time for IDB to update
+    ExportGltf(path);
+  }
+  // GlTF Export stuff
 
   private void SaveModel() {
 #if USD_SUPPORTED && (UNITY_EDITOR || EXPERIMENTAL_ENABLED)
