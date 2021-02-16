@@ -276,6 +276,7 @@ MonoBehaviour:
   m_VrCamera: {fileID: 1379267300}
   m_MaximumLoadingTime: 60
   m_SceneLoadRatio: 0.75
+  message: {fileID: 1684060410}
 --- !u!4 &326031496
 Transform:
   m_ObjectHideFlags: 0
@@ -411,7 +412,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1519074236726350, guid: 770ce3c2e018d6242be0bad3df133810, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4662475461949518, guid: 770ce3c2e018d6242be0bad3df133810, type: 3}
       propertyPath: m_RootOrder
@@ -470,7 +471,7 @@ PrefabInstance:
     - target: {fileID: 114573441618034056, guid: 770ce3c2e018d6242be0bad3df133810,
         type: 3}
       propertyPath: m_text
-      value: Loading...
+      value: Activate your controllers and enter VR.
       objectReference: {fileID: 0}
     - target: {fileID: 114573441618034056, guid: 770ce3c2e018d6242be0bad3df133810,
         type: 3}
@@ -504,13 +505,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114573441618034056, guid: 770ce3c2e018d6242be0bad3df133810,
         type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114573441618034056, guid: 770ce3c2e018d6242be0bad3df133810,
+        type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114573441618034056, guid: 770ce3c2e018d6242be0bad3df133810,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114573441618034056, guid: 770ce3c2e018d6242be0bad3df133810,
         type: 3}
@@ -525,7 +531,7 @@ PrefabInstance:
     - target: {fileID: 114573441618034056, guid: 770ce3c2e018d6242be0bad3df133810,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 10
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 114573441618034056, guid: 770ce3c2e018d6242be0bad3df133810,
         type: 3}
@@ -544,6 +550,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f391d9dfe39f324c99fb880d5728558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1684060410 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114573441618034056, guid: 770ce3c2e018d6242be0bad3df133810,
+    type: 3}
+  m_PrefabInstance: {fileID: 1684060408}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &2033527394 stripped

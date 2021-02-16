@@ -218,7 +218,7 @@ URL=" + kExportDocumentationUrl;
             }
 
             OutputWindowScript.m_Instance.CreateInfoCardAtController(
-                InputManager.ControllerName.Brush, basename + " exported!");
+                InputManager.ControllerName.Brush, basename + " exported! Your download will begin in 5 seconds.");
             ControllerConsoleScript.m_Instance.AddNewLine("Located in " + App.UserExportPath());
 
             string readmeFilename = Path.Combine(App.UserExportPath(), kExportReadmeName);

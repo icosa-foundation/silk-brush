@@ -28,7 +28,7 @@ MonoBehaviour:
     m_SkyboxTint: {r: 0, g: 0, b: 0, a: 1}
     m_EnvironmentPrefab: EnvironmentPrefabs/AmbientDustDim
     m_EnvironmentReverbZonePrefab: EnvironmentAudio/ReverbZone_Room
-    m_SkyboxCubemap: {fileID: 8900000, guid: ad9932ea763ece544a219d158f9e664b, type: 3}
+    m_SkyboxCubemap: {fileID: 8900000, guid: 33c78fe4fd8935c4b80c531c14e586e8, type: 3}
     m_ReflectionCubemap: {fileID: 8900000, guid: 0d8ea665785ee6547ab32b35b3672036,
       type: 3}
     m_ReflectionIntensity: 2

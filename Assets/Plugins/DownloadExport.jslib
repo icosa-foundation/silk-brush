@@ -36,6 +36,7 @@ mergeInto(LibraryManager.library, {
                 }
                 else {
                     console.log("Not found");
+                    console.log(event);
                 }
             };
         };

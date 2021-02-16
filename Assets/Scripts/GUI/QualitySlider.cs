@@ -36,7 +36,8 @@ namespace TiltBrush {
     }
 
     void PositionNobAtCurrentQuality() {
-      int iCurrentQuality = QualitySettings.GetQualityLevel();
+      //int iCurrentQuality = QualitySettings.GetQualityLevel();
+      int iCurrentQuality = 0; // Let's try to default to lowest for performance's sake right now
       QualityControls.m_Instance.QualityLevel = iCurrentQuality;
       Vector3 vLocalPos = m_Nob.transform.localPosition;
       vLocalPos.x = Mathf.Clamp(m_Steps[iCurrentQuality] - 0.5f, -0.5f, 0.5f) * m_MeshScale.x;

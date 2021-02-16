@@ -15,6 +15,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 namespace TiltBrush
 {
@@ -32,6 +33,8 @@ namespace TiltBrush
         // m_MaximumLoadingTime
         private float m_FakeLoadingRate;
         private float m_CurrentLoadingPosition;
+
+        [SerializeField] private TextMeshPro message;
 
         private IEnumerator Start()
         {
@@ -61,10 +64,11 @@ namespace TiltBrush
             // Stall until we've retrieved an input profile
             while (!ProfileLoader.Instance.profileFound)
             {
-                Debug.Log("Input profile not yet found. Waiting 5 seconds...");
                 ProfileLoader.Instance.TryGetProfile();
-                yield return new WaitForSeconds(5);
+                yield return new WaitForSeconds(3);
             }
+
+            message.text = "Loading...";
 
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Main");
             while (!asyncLoad.isDone)
