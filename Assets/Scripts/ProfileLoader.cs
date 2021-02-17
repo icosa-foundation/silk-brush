@@ -10,7 +10,8 @@ namespace TiltBrush
     {
         private static ProfileLoader _instance;
         
-        public WebXRController controller;
+        public WebXRController controllerL;
+        public WebXRController controllerR;
         private VrSdk vrsdk;
         public bool profileFound = false;
         public string profile;
@@ -30,7 +31,7 @@ namespace TiltBrush
 
         public bool TryGetProfile()
         {
-            profiles = controller.GetProfiles();
+            profiles = controllerR.GetProfiles();
             if (profiles != null)
             {
                 profile = profiles[0];

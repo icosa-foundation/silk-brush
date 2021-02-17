@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "com.de-panther.webxr": "0.6.0-preview",
-    "com.de-panther.webxr-interactions": "0.6.0-preview",
+    "com.de-panther.webxr": "0.7.0-preview",
+    "com.de-panther.webxr-interactions": "0.7.0-preview",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.editorcoroutines": "0.0.2-preview.1",
@@ -17,6 +17,7 @@
     "com.unity.xr.legacyinputhelpers": "2.1.7",
     "com.unity.xr.management": "3.2.17",
     "com.unity.xr.windowsmr": "2.5.2",
+    "jillejr.newtonsoft.json-for-unity": "12.0.301",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
@@ -47,8 +48,7 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0",
-    "jillejr.newtonsoft.json-for-unity": "12.0.301"
+    "com.unity.modules.xr": "1.0.0"
   },
   "scopedRegistries": [
     {

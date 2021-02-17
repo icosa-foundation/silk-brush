@@ -72,9 +72,11 @@ namespace TiltBrush
 
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Main");
             while (!asyncLoad.isDone)
+            //while (asyncLoad.progress < 1f)
             {
                 UpdateProgress(0, m_SceneLoadRatio, asyncLoad.progress);
                 yield return null;
+                //yield return new WaitForSecondsRealtime(0.05f);
             }
 
             // Skip a frame to allow app to get out of Standard and in to LoadingBrushesAndLighting state.

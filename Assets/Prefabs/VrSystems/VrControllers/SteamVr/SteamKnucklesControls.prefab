@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4499482680837000}
   - component: {fileID: 114096517187107858}
   - component: {fileID: 114327107998603406}
+  - component: {fileID: 2134456802557843474}
   m_Layer: 14
   m_Name: Controller (wand)
   m_TagString: Untagged
@@ -67,6 +68,19 @@ MonoBehaviour:
     type: 2}
   m_TriggerMaterialInactive: {fileID: 2100000, guid: fe735f256aaa69c4686707f0b47bcc0d,
     type: 2}
+--- !u!114 &2134456802557843474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224971019456834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f018e4326e3394db56a8af0ea29dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLeft: 1
 --- !u!1 &1268974758188984
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,6 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4374593136079346}
   - component: {fileID: 114599993792009672}
+  - component: {fileID: -6885132459283210151}
   m_Layer: 0
   m_Name: SteamKnucklesControls
   m_TagString: Untagged
@@ -125,6 +140,18 @@ MonoBehaviour:
   m_TouchpadActivationRange: {x: -0.8, y: 0.8}
   m_LogitechPenActivationRange: {x: 0, y: 1}
   m_WandRotateJoystickPercent: 0.25
+--- !u!114 &-6885132459283210151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268974758188984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9b402cc209d934892afe3dd3c8d0a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1697162171492074
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,6 +163,7 @@ GameObject:
   - component: {fileID: 4213443773004250}
   - component: {fileID: 114587168986135948}
   - component: {fileID: 114376126610920366}
+  - component: {fileID: 1408825286791400384}
   m_Layer: 14
   m_Name: Controller (brush)
   m_TagString: Untagged
@@ -192,6 +220,19 @@ MonoBehaviour:
     type: 2}
   m_TriggerMaterialInactive: {fileID: 2100000, guid: fe735f256aaa69c4686707f0b47bcc0d,
     type: 2}
+--- !u!114 &1408825286791400384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697162171492074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f018e4326e3394db56a8af0ea29dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLeft: 0
 --- !u!1 &1907493017501070
 GameObject:
   m_ObjectHideFlags: 0

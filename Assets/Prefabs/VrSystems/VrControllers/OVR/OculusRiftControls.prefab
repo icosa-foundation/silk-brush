@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 114000012920803390}
   - component: {fileID: 114000010396879732}
   - component: {fileID: 114000013047601334}
+  - component: {fileID: 8747111022148476088}
   m_Layer: 0
   m_Name: OculusRiftControls
   m_TagString: Untagged
@@ -83,6 +84,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ec843b5aa8489346a56d00dbf0d3549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8747111022148476088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010438099326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9b402cc209d934892afe3dd3c8d0a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1000012466662228
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +107,7 @@ GameObject:
   - component: {fileID: 4000011975441068}
   - component: {fileID: 114000011204291836}
   - component: {fileID: 114000013850239298}
+  - component: {fileID: 2879686023120422143}
   m_Layer: 14
   m_Name: Controller (wand)
   m_TagString: Untagged
@@ -150,6 +164,19 @@ MonoBehaviour:
     type: 2}
   m_TriggerMaterialInactive: {fileID: 2100000, guid: 7bf3a526ba1bdde47832897820afe252,
     type: 2}
+--- !u!114 &2879686023120422143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012466662228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f018e4326e3394db56a8af0ea29dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLeft: 1
 --- !u!1 &1000013955957702
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,6 +188,7 @@ GameObject:
   - component: {fileID: 4000011821643164}
   - component: {fileID: 114000013477957092}
   - component: {fileID: 114000014227542672}
+  - component: {fileID: 698808672850118947}
   m_Layer: 14
   m_Name: Controller (brush)
   m_TagString: Untagged
@@ -217,3 +245,16 @@ MonoBehaviour:
     type: 2}
   m_TriggerMaterialInactive: {fileID: 2100000, guid: 7bf3a526ba1bdde47832897820afe252,
     type: 2}
+--- !u!114 &698808672850118947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013955957702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f018e4326e3394db56a8af0ea29dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLeft: 0
