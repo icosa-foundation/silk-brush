@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -188,6 +188,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 20092747195267750, guid: ea7c0165e16afe349a301abf9c89f74d,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20092747195267750, guid: ea7c0165e16afe349a301abf9c89f74d,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20092747195267750, guid: ea7c0165e16afe349a301abf9c89f74d,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20572450475250664, guid: ea7c0165e16afe349a301abf9c89f74d,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20572450475250664, guid: ea7c0165e16afe349a301abf9c89f74d,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20572450475250664, guid: ea7c0165e16afe349a301abf9c89f74d,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20930522213222284, guid: ea7c0165e16afe349a301abf9c89f74d,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20930522213222284, guid: ea7c0165e16afe349a301abf9c89f74d,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20930522213222284, guid: ea7c0165e16afe349a301abf9c89f74d,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114128207473628304, guid: ea7c0165e16afe349a301abf9c89f74d,
         type: 3}
       propertyPath: alwaysUseGrip
@@ -203,6 +248,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3431978019681743018, guid: ea7c0165e16afe349a301abf9c89f74d,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431978019681743018, guid: ea7c0165e16afe349a301abf9c89f74d,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431978019681743018, guid: ea7c0165e16afe349a301abf9c89f74d,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431978019681743018, guid: ea7c0165e16afe349a301abf9c89f74d,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3858442981242374931, guid: ea7c0165e16afe349a301abf9c89f74d,
         type: 3}
       propertyPath: m_IsActive
@@ -216,6 +281,26 @@ PrefabInstance:
     - target: {fileID: 6659729026770501894, guid: ea7c0165e16afe349a301abf9c89f74d,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8992034749185188121, guid: ea7c0165e16afe349a301abf9c89f74d,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8992034749185188121, guid: ea7c0165e16afe349a301abf9c89f74d,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8992034749185188121, guid: ea7c0165e16afe349a301abf9c89f74d,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8992034749185188121, guid: ea7c0165e16afe349a301abf9c89f74d,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -433,9 +518,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 326031496}
     m_Modifications:
+    - target: {fileID: 1126183389128198, guid: 770ce3c2e018d6242be0bad3df133810, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183291073980518, guid: 770ce3c2e018d6242be0bad3df133810, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1393556046606512, guid: 770ce3c2e018d6242be0bad3df133810, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498042094514302, guid: 770ce3c2e018d6242be0bad3df133810, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1519074236726350, guid: 770ce3c2e018d6242be0bad3df133810, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561734315286282, guid: 770ce3c2e018d6242be0bad3df133810, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1650166428930152, guid: 770ce3c2e018d6242be0bad3df133810, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4662475461949518, guid: 770ce3c2e018d6242be0bad3df133810, type: 3}
       propertyPath: m_RootOrder
