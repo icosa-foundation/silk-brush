@@ -1,4 +1,8 @@
-# Tilt Brush README
+# Silk Brush README
+
+Silk Brush is a port of Tilt Brush to WebXR. 
+
+-------------------------------------------------------------------------------
 
 Tilt Brush is licensed under Apache 2.0. It is not an officially supported
 Google product. See the [LICENSE](LICENSE) file for more details.
@@ -20,8 +24,7 @@ Get the Tilt Brush open-source application running on your own devices.
 
 ### Prerequisites
 
-*   [Unity 2018.4.11f1](unityhub://2018.4.11f1/7098af2f11ea)
-*   [SteamVR](https://store.steampowered.com/app/250820/SteamVR/)
+*   [Unity 2019.4.18f1](unityhub://2019.4.18f1/3310a4d4f880)
 *   [Python 2.7.0](https://www.python.org/download/releases/2.7/) (Optional —
     needed only if you wish to run the scripts in the `Support/bin` directory)
 
@@ -33,37 +36,6 @@ from the official version. Before building the application, go into `App.cs` and
 the Player settings to change the company and application names to your own.
 
 Please see the [Tilt Brush Brand Guidelines](BRAND_GUIDELINES.md) for more details.
-
-### Running the application in the Unity editor
-
-Follow these steps when running the application for the first time:
-
-1.  Start Unity.
-1.  Go to **File** > **Open Scene**. \
-1.  Select `/Assets/Scenes/Main.unity`. Unity should automatically prompt you to
-    import **TextMesh Pro**.
-1.  Choose **Import TMP Essentials**. \
-    You can also do this through **Window** > **TextMesh Pro** > **Import TMP
-    Essential Resources**.
-1.  Press **Play**.
-
-These steps have been tested with Release 1.0.54.
-
-### Building the application from the Unity editor
-
-Although it's possible to build Tilt Brush using the standard Unity build tools,
-we recommend using a build script to ensure the application builds with the
-correct settings. To run this script, go to **Tilt** > **Build** > **Do Build**,
-or build from the Tilt Brush build window by navigating to **Tilt** >
-**Build** > **Build Window**.
-
-Note: The application may take a while to build the first time.
-
-### Building the application from the Windows command line
-
-Use the `build` script in the `Support/bin` directory to specify the target
-platform and the build options you wish to enable. Run `build —help` to see the
-various build options.
 
 ### Additional features
 
@@ -164,60 +136,6 @@ Follow these steps to store the Google API Key and credential data:
     a `Secrets` field. Add a new item to this field.
 2.  Select `Google` as the service. Paste in the API key, client ID, and client
     secret that were generated earlier.
-
-## Enabling native Oculus support
-
-Note: _Tilt Brush_ is a Google trademark. If you intend to publish a cloned
-version of the application, you are required to
-[choose a different name](#changing-the-application-name) to distinguish it from
-the official version.
-
-Tilt Brush targets SteamVR instead of Oculus by default. Follow these steps to
-enable native Oculus support:
-
-1.  Enable the Oculus desktop package in the Package Manager.
-1.  Install the
-    [Oculus Unity Integration](https://developer.oculus.com/downloads/package/unity-integration-archive/1.41.0/).
-
-**Note:** The above link goes to version 1.41, which the official version of
-Tilt Brush was built with. Later versions have not been tested. You only need to
-include the `Platform` and `VR` subdirectories when you import.
-
-1.  If you see a dialog about upgrading the Unity Oculus plugin, click
-    **Accept**.
-1.  In the **Standalone** tab of the Player settings, go to **Other Settings**
-    and define `OCULUS_SUPPORTED` in **Scripting Define Symbols**. Add it to the
-    end of the list and use a semicolon to separate it from the previous define
-    commands.
-
-### Building your app for Oculus Quest
-
-Follow these steps to build your app for Oculus Quest:
-
-1.  Define `OCULUS_SUPPORTED` in **Scripting Define Symbols** in the **Android**
-    tab of **Player Settings**, under **Other Settings**. Add it to the end of
-    the list and use a semicolon to separate it from the previous define
-    command.
-1.  Set up your machine for
-    [Oculus Quest Development](https://developer.oculus.com/documentation/unity/book-unity-gsg/?device=QUEST).
-1.  Make sure the following are set in Unity:
-    *   **Tilt** > **Build** > **SDK: OVR**
-    *   **Tilt** > **Build** > **Platform: Android**
-    *   **Tilt** > **Build** > **Runtime: Mono**
-1.  Navigate to **Tilt** > **Build** > **Do Build**.
-1.  Find the generated executable. It will most likely be somewhere under
-    `Builds/OculusMobile_Release_TiltBrush_FromGui/`.
-1.  Run `adb install com.google.tiltbrush.apk`.
-
-### Publishing to Oculus stores
-
-Follow these steps to publish to Oculus stores:
-
-1.  Get an application ID from Oculus. The desktop and quest versions of each
-    application need separate IDs.
-1.  Add these IDs to the `Secrets` file. Both `Oculus` and `OculusMobile` should
-    have their own entries.
-1.  Put the app IDs in the `Client ID` field for each.
 
 ## Tilt Brush intro sketch
 
