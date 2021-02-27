@@ -13,6 +13,7 @@
 // limitations under the License.
 
 using UnityEngine;
+using WebXR;
 
 namespace TiltBrush {
 
@@ -166,7 +167,8 @@ public class TutorialManager : MonoBehaviour {
 
     case IntroTutorialState.WaitForSwipe:
       m_IntroSwipeTotal += InputManager.m_Instance.GetAdjustedWandScrollAmount();
-      if (Mathf.Abs(m_IntroSwipeTotal) > m_IntroSwipeAdvanceAmount) {
+      if (Mathf.Abs(m_IntroSwipeTotal) > m_IntroSwipeAdvanceAmount 
+          || WebXRManager.Instance.gameObject.GetComponentInChildren<WebXRController>().isHandActive) {
         DisableControllerTutorial(InputManager.ControllerName.Wand);
         IntroState = IntroTutorialState.ActivatePanels;
       }

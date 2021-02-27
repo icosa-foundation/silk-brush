@@ -39,6 +39,7 @@ namespace TiltBrush
         Gvr,
         LogitechPen,
         Cosmos,
+        Hand
     }
 
     //
@@ -75,6 +76,7 @@ namespace TiltBrush
         // Prefab for the new-style Touch controllers, used for Rift-S and Quest
         [SerializeField] private GameObject m_OculusQuestControlsPrefab;
         [SerializeField] private GameObject m_GvrPointerControlsPrefab;
+        [SerializeField] private GameObject m_HandControlsPrefab;
         [SerializeField] private GameObject m_NonVrControlsPrefab;
 
         // This is the object "Camera (eye)"
@@ -562,6 +564,10 @@ namespace TiltBrush
                     break;
                 case ControllerStyle.InitializingSteamVR:
                     controlsPrefab = m_SteamUninitializedControlsPrefab;
+                    m_NeedsToAttachConsoleScript = false;
+                    break;
+                case ControllerStyle.Hand:
+                    controlsPrefab = m_HandControlsPrefab;
                     m_NeedsToAttachConsoleScript = false;
                     break;
                 case ControllerStyle.Unset:

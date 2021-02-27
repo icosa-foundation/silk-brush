@@ -21,6 +21,7 @@ using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 using Newtonsoft.Json;
 
@@ -319,6 +320,9 @@ namespace TiltBrush
         private DriveAccess m_DriveAccess;
         private DriveSync m_DriveSync;
         private GoogleUserSettings m_GoogleUserSettings;
+
+        [DllImport("__Internal")]
+        private static extern void _OpenURL(string url);
 
         // ------------------------------------------------------------
         // Properties
@@ -2201,7 +2205,8 @@ namespace TiltBrush
             }
             else
             {
-                Application.OpenURL(url);
+                Debug.Log("Attempting to open " + url);
+                _OpenURL(url);
             }
 #endif
         }

@@ -73,3 +73,6 @@
 
 # Google process
 .gitbugtraq
+
+# Do not commit API secrets
+/Assets/Secrets.asset*

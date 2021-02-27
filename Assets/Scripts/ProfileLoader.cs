@@ -29,7 +29,7 @@ namespace TiltBrush
             Debug.Log("Profile loader is active");
         }
 
-        public bool TryGetProfile()
+        public void TryGetProfile()
         {
             profiles = controllerR.GetProfiles();
             if (profiles != null)
@@ -37,11 +37,12 @@ namespace TiltBrush
                 profile = profiles[0];
                 Debug.Log("Found profile: " + profile);
                 profileFound = true;
-                return true;
             }
-            else
+            else if (controllerR.isHandActive && !controllerR.isControllerActive)
             {
-                return false;
+                profile = "hand";
+                Debug.Log("Found profile: hand");
+                profileFound = true;
             }
         }
 
@@ -63,8 +64,10 @@ namespace TiltBrush
                     return ControllerStyle.OculusTouch;
                 case "valve-index":
                     return ControllerStyle.Knuckles;
+                case "hand":
+                    return ControllerStyle.Hand;
                 default:
-                    Debug.Log("Uh oh. It looks like your current profile (" + profile + ") isn't supported. Defaulting to WMR.");
+                    Debug.Log("Uh oh. It looks like your current profile (" + profile + ") isn't supported. Defaulting to WMR style.");
                     return ControllerStyle.Wmr;
             }
         }
@@ -90,7 +93,7 @@ namespace TiltBrush
                 case "valve-index":
                     return VrHardware.Vive;
                 default:
-                    Debug.Log("Uh oh. It looks like your current profile (" + profile + ") isn't supported. Defaulting to WMR.");
+                    Debug.Log("Uh oh. It looks like your current profile (" + profile + ") isn't supported. Defaulting to WMR hardware.");
                     return VrHardware.Wmr;
             }
         }

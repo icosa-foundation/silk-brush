@@ -4,29 +4,39 @@ using UnityEngine;
 using WebXR;
 
 public class WebXRPoseLink : MonoBehaviour
-{
-    
+{    
     public bool isLeft;
-    private Transform controller;
-    
-    // Start is called before the first frame update
+    private WebXRController controller;
+
     void Start()
     {
         if (isLeft)
-            controller = GameObject.Find("handL").transform;
+            controller = GameObject.Find("handL").GetComponent<WebXRController>();
         else
-            controller = GameObject.Find("handR").transform;
+            controller = GameObject.Find("handR").GetComponent<WebXRController>();
+
+        WebXRManager.OnHandUpdate += UpdatePoseHand;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        UpdatePose();
+        if (!controller.isHandActive)
+            UpdatePose();
     }
 
     private void UpdatePose()
     {
-        transform.position = controller.position;
-        transform.rotation = controller.rotation;
+        transform.position = controller.transform.position;
+        transform.rotation = controller.transform.rotation;
     }
+
+    private void UpdatePoseHand(WebXRHandData handData)
+    {
+        if (controller.isHandActive && !controller.isControllerActive && handData.hand == (int)controller.hand)
+        {
+            transform.localPosition = handData.joints[9].position;
+            transform.localRotation = handData.joints[8].rotation;
+        }
+    }
+
 }
