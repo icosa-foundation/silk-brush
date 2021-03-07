@@ -27181,8 +27181,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SketchSurface: {fileID: 593121473}
   m_DefaultSketchPlaybackMode: 0
-  m_GazeMaxAngleFromPointing: 85
-  m_GazeMaxAngleFacingToForward: 80
+  m_GazeMaxAngleFromPointing: 180
+  m_GazeMaxAngleFacingToForward: 180
   m_AtlasIconTextures: 1
   m_SaveIconTool: {fileID: 835580262}
   m_DropCam: {fileID: 1038705378}
@@ -27192,7 +27192,7 @@ MonoBehaviour:
   m_TransformGizmoPrefab: {fileID: 100004, guid: 9841c67ebbc439c41990e9f5d3ddcbbb,
     type: 3}
   m_RotationIconPrefab: {fileID: 100000, guid: 72830b8e348ad7649886747f9c168ebc, type: 3}
-  m_GazeMaxAngleFromFacing: 360
+  m_GazeMaxAngleFromFacing: 180
   m_GazeMaxDistance: 10
   m_GazeControllerPointingDistance: 4
   m_GazePanelDectivationDelay: 0.25

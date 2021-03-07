@@ -65,7 +65,7 @@ namespace TiltBrush
             while (!ProfileLoader.Instance.profileFound)
             {
                 ProfileLoader.Instance.TryGetProfile();
-                yield return new WaitForSeconds(3);
+                yield return new WaitForSeconds(1);
             }
 
             message.text = "Loading...";

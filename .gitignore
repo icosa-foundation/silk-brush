@@ -26,6 +26,7 @@
 /*.sln
 /*.userprefs
 .vs
+.vsconfig
 
 # Generated files in TiltBrushCpp project
 /Support/TiltBrushCpp/x64
