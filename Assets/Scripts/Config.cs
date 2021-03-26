@@ -729,7 +729,7 @@ namespace TiltBrush
             foreach (var group in buildTargetGroups)
             {
                 // TODO use the public api (see BuildTiltBrush)
-                UnityEditorInternal.VR.VREditor.SetVirtualRealitySDKs(group, newDevices);
+                //UnityEditorInternal.VR.VREditor.SetVirtualRealitySDKs(group, newDevices);
             }
         }
 
