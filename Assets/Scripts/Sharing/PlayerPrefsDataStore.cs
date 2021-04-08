@@ -26,7 +26,7 @@ namespace TiltBrush {
 /// Implements IDataStore, storing data in Unity PlayerPrefs.
 public class PlayerPrefsDataStore : IDataStore {
   private string m_Prefix;
-  private Dictionary<string, string> m_Data;
+  public Dictionary<string, string> m_Data;
   // The DataStore may be called off the main thread, and therefore we can't actually interact with
   // PlayerPrefs straight away. A queue of actions is therefore created with the playerprefs
   // interactions in it, which are executed during the update phase.

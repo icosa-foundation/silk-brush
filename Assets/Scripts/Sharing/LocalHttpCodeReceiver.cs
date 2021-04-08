@@ -26,14 +26,17 @@ namespace TiltBrush {
 public class LocalHttpCodeReceiver : ICodeReceiver {
   private string m_LocalPath;
 
-  public string RedirectUri =>
+  public string RedirectUriOLD =>
       $"http://localhost:{App.HttpServer.HttpPort}{m_LocalPath}";
+
+  public string RedirectUri =>
+      $"https://msub2.github.io/silk-brush/authorize";
 
   private TaskCompletionSource<NameValueCollection> m_QueryString;
 
   private string FinalRedirectPage => Application.platform == RuntimePlatform.Android
-      ? "http://localhost:40074/login/ReplaceHeadsetMobile.html"
-      : "http://localhost:40074/login/ReplaceHeadset.html";
+      ? "https://msub2.github.io/login/ReplaceHeadsetMobile.html"
+      : "https://msub2.github.io/login/ReplaceHeadset.html";
 
   public LocalHttpCodeReceiver(string localPath) {
     m_LocalPath = localPath;

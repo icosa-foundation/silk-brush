@@ -121,7 +121,7 @@ public class OAuth2Identity : MonoBehaviour {
   }
 
   public async Task<string> GetAccessToken() {
-    if (UserCredential == null) { return null; }
+    if (UserCredential == null) { return null; }    
     return await UserCredential.GetAccessTokenForRequestAsync();
   }
   
@@ -138,6 +138,8 @@ public class OAuth2Identity : MonoBehaviour {
       return;
     }
     m_TokenDataStore = new PlayerPrefsDataStore(m_TokenStorePrefix);
+    Debug.Log("In InitializeAsync");
+    await m_TokenDataStore.StoreAsync("user", "test");
     var scopes = App.Config.IsMobileHardware
         ? m_OAuthScopes
         : m_OAuthScopes.Concat(m_AdditionalDesktopOAuthScopes).ToArray();
@@ -177,6 +179,7 @@ public class OAuth2Identity : MonoBehaviour {
     bool forTesting = !Application.isPlaying;
     // If we have a stored user token, see if we can refresh it and log in automatically.
     if (m_TokenDataStore.UserTokens() != null) {
+      Debug.Log("Found user token: " + m_TokenDataStore.UserTokens());
       await ReauthorizeAsync();
       await GetUserInfoAsync(onStartup: true, forTesting: forTesting);
       if (LoggedIn) {
