@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Auth.OAuth2.Flows;
 using Google.Apis.Util.Store;
@@ -75,15 +76,17 @@ public class OAuth2CredentialRequest {
 
   /// Authorizes the user. Must not be called when already authorizing.
   public async Task AuthorizeAsync() {
-    await CancelAuthorizationAsync();
+    await CancelAuthorizationAsync().AsUniTask();
     // If we're currently revoking, just wait for it to finish.
     if (m_Revocation != null) {
       await m_Revocation;
     }
     try {
+      Debug.Log("Trying to authorize");
       m_Authorization = new TaskAndCts<UserCredential>();
       m_Authorization.Task = m_AppFlow.AuthorizeAsync("user", m_Authorization.Token);
-      m_UserCredential = await m_Authorization.Task;
+      m_UserCredential = await m_Authorization.Task.AsUniTask();
+      Debug.Log("Got token " + m_UserCredential.Token);
     } catch (OperationCanceledException) {
       // Do nothing with this exception as we only get it when the user cancels.
     } finally {
@@ -92,10 +95,11 @@ public class OAuth2CredentialRequest {
   }
 
   private async Task CancelAuthorizationAsync() {
+    Debug.Log("In cancelauthorizationasync");
     if (m_Authorization != null) {
       m_Authorization.Cancel();
       try {
-        await m_Authorization.Task;
+        await m_Authorization.Task.AsUniTask();
       } catch (OperationCanceledException) {
       } finally {
         m_Authorization = null;

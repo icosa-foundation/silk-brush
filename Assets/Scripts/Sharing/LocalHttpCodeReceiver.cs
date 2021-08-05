@@ -30,7 +30,7 @@ public class LocalHttpCodeReceiver : ICodeReceiver {
       $"http://localhost:{App.HttpServer.HttpPort}{m_LocalPath}";
 
   public string RedirectUri =>
-      $"https://msub2.github.io/silk-brush/authorize";
+      $"https://localhost:8000/authorize";
 
   private TaskCompletionSource<NameValueCollection> m_QueryString;
 
@@ -57,7 +57,7 @@ public class LocalHttpCodeReceiver : ICodeReceiver {
         context.Response.StatusCode = (int) HttpStatusCode.SeeOther;
       });
 
-      App.OpenURL(url.Build().AbsoluteUri);
+      App.OpenURL(url.Build().AbsoluteUri, true);
 
       var result = await m_QueryString.Task;
 

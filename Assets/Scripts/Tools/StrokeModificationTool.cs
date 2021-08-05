@@ -38,7 +38,7 @@ public class StrokeModificationTool : BaseStrokeIntersectionTool {
     On,
     FadingOut
   }
-  //private GvrAudioSource m_ToolAudio;
+  private AudioSource m_ToolAudio;
   private AudioState m_CurrentAudioState;
   private float m_AudioFadeRatio;
   public float m_AudioVolumeMax;
@@ -60,7 +60,7 @@ public class StrokeModificationTool : BaseStrokeIntersectionTool {
 
     m_CurrentSize = Mathf.Lerp(m_SizeRange.x, m_SizeRange.y, 0.5f);
     m_ToolTransform.localScale = Vector3.one * m_CurrentSize;
-    //m_ToolAudio = m_ToolTransform.GetComponent<GvrAudioSource>();
+    m_ToolAudio = m_ToolTransform.GetComponent<AudioSource>();
 
     m_LockToController = m_SketchSurface.IsInFreePaintMode();
 
@@ -89,7 +89,7 @@ public class StrokeModificationTool : BaseStrokeIntersectionTool {
   }
 
   protected void RequestPlayAudio(bool bPlay) {
-    /*if (m_ToolAudio) {
+    if (m_ToolAudio) {
       if (bPlay) {
         if (m_CurrentAudioState == AudioState.Off) {
           if (AudioManager.Enabled) {
@@ -104,13 +104,13 @@ public class StrokeModificationTool : BaseStrokeIntersectionTool {
           m_CurrentAudioState = AudioState.FadingOut;
         }
       }
-    }*/
+    }
   }
 
   protected void HardStopAudio() {
     m_CurrentAudioState = AudioState.Off;
-    //m_ToolAudio.Stop();
-    //m_ToolAudio.volume = 0.0f;
+    m_ToolAudio.Stop();
+    m_ToolAudio.volume = 0.0f;
   }
 
   override public bool ShouldShowTouch() {
@@ -124,7 +124,7 @@ public class StrokeModificationTool : BaseStrokeIntersectionTool {
   void Update() {
     // Note this isn't in UpdateAudioVisuals() because we want it to run while the
     // tool is deactivated.
-    /*if (m_ToolAudio) {
+    if (m_ToolAudio) {
       // Update our audio volume if it's fading in or out
       switch (m_CurrentAudioState) {
       case AudioState.FadingIn:
@@ -155,7 +155,7 @@ public class StrokeModificationTool : BaseStrokeIntersectionTool {
         m_ToolAudio.volume = fVolume;
         break;
       }
-    }*/
+    }
   }
 
   override public void UpdateTool() {

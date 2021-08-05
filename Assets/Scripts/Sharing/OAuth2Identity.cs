@@ -16,8 +16,11 @@ using System;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
+using Newtonsoft.Json;
 
 using Google.Apis.Auth.OAuth2;
+using Google.Apis.Auth.OAuth2.Responses;
 using Google.Apis.Services;
 using Google.Apis.PeopleService.v1;
 using UnityEngine;
@@ -139,7 +142,6 @@ public class OAuth2Identity : MonoBehaviour {
     }
     m_TokenDataStore = new PlayerPrefsDataStore(m_TokenStorePrefix);
     Debug.Log("In InitializeAsync");
-    await m_TokenDataStore.StoreAsync("user", "test");
     var scopes = App.Config.IsMobileHardware
         ? m_OAuthScopes
         : m_OAuthScopes.Concat(m_AdditionalDesktopOAuthScopes).ToArray();
@@ -180,8 +182,10 @@ public class OAuth2Identity : MonoBehaviour {
     // If we have a stored user token, see if we can refresh it and log in automatically.
     if (m_TokenDataStore.UserTokens() != null) {
       Debug.Log("Found user token: " + m_TokenDataStore.UserTokens());
-      await ReauthorizeAsync();
-      await GetUserInfoAsync(onStartup: true, forTesting: forTesting);
+      await ReauthorizeAsync().AsUniTask();
+      Debug.Log("Reauthorized");
+      await GetUserInfoAsync(onStartup: true, forTesting: forTesting).AsUniTask();
+      Debug.Log("Got user info");
       if (LoggedIn) {
         OnSuccessfulAuthorization?.Invoke();
       }
@@ -202,7 +206,8 @@ public class OAuth2Identity : MonoBehaviour {
     if (m_TokenDataStore.UserTokens() == null || m_CredentialRequest.IsAuthorizing) {
       return;
     }
-    await m_CredentialRequest.AuthorizeAsync();
+    Debug.Log("Reauthorizing async");
+    await m_CredentialRequest.AuthorizeAsync().AsUniTask();
   }
 
   public async void LoginAsync() {
@@ -250,11 +255,13 @@ public class OAuth2Identity : MonoBehaviour {
       return;
     }
 
+    Debug.Log("In GetUserInfoAsync");
+
     Task<UserInfo> infoTask = IsGoogle
         ? GetUserInfoGoogleAsync(forTesting)
         : GetUserInfoSketchfabAsync(forTesting);
 
-    Profile = await infoTask;  // Triggers OnProfileUpdated event
+    Profile = await infoTask.AsUniTask();  // Triggers OnProfileUpdated event
 
     if (!forTesting) {
       ControllerConsoleScript.m_Instance.AddNewLine(Profile.name + " logged in.");
@@ -277,13 +284,16 @@ public class OAuth2Identity : MonoBehaviour {
   }
 
   private async Task<UserInfo> GetUserInfoGoogleAsync(bool forTesting) {
+    Debug.Log("Getting Google User Info");
     var peopleService = new PeopleServiceService(new BaseClientService.Initializer() {
         HttpClientInitializer = UserCredential,
         ApplicationName = App.kGoogleServicesAppName,
     });
     var meRequest = peopleService.People.Get("people/me");
     meRequest.PersonFields = "names,emailAddresses,photos";
-    var me = await meRequest.ExecuteAsync();
+    Debug.Log("About to get me");
+    var me = await meRequest.ExecuteAsync().AsUniTask();
+    Debug.Log("Got Me");
 
     UserInfo user = new UserInfo();
     user.id = me.ResourceName;
@@ -294,7 +304,8 @@ public class OAuth2Identity : MonoBehaviour {
     if (string.IsNullOrEmpty(iconUri)) {
       Debug.LogException(new UserInfoError("Returned UserInfo contained no icon URI."));
     } else if (!forTesting) {  // Not necessary yet when unit-testing
-      user.icon = await ImageUtils.DownloadTextureAsync(SetImageUrlOptions(iconUri));
+      user.icon = await ImageUtils.DownloadTextureAsync(SetImageUrlOptions(iconUri)).AsUniTask();
+      Debug.Log("Got icon");
     }
     // Assume if the texture is 8x8 that the texture couldn't be decoded, and put our own in.
     // See b/62269743. Also use this texture if there is no user icon.
@@ -303,6 +314,20 @@ public class OAuth2Identity : MonoBehaviour {
     }
     return user;
   }
-}
 
+  public void ReceiveToken(string data)
+  {
+    TokenResponse response = JsonConvert.DeserializeObject<TokenResponse>(data);
+    response.IssuedUtc = DateTime.Now;
+    Debug.Log(response.AccessToken + "\n"
+        + response.ExpiresInSeconds + "\n"
+        + response.IdToken + "\n"
+        + response.IssuedUtc + "\n"
+        + response.RefreshToken + "\n"
+        + response.Scope + "\n"
+        + response.TokenType);
+    m_TokenDataStore.StoreAsync("user", response);
+  }
+
+}
 }  // namespace TiltBrush

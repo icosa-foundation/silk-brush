@@ -16,11 +16,14 @@ limitations under the License.
 
 using System.Threading;
 using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
+
 
 using Google.Apis.Auth.OAuth2.Flows;
 using Google.Apis.Auth.OAuth2.Responses;
 using Google.Apis.Auth.OAuth2.Requests;
 using Google.Apis.Logging;
+using UnityEngine;
 
 namespace Google.Apis.Auth.OAuth2
 {
@@ -33,7 +36,7 @@ namespace Google.Apis.Auth.OAuth2
     /// </remarks>
     public class AuthorizationCodeInstalledApp : IAuthorizationCodeInstalledApp
     {
-        private static readonly ILogger Logger = ApplicationContext.Logger.ForType<AuthorizationCodeInstalledApp>();
+        private static readonly Logging.ILogger Logger = ApplicationContext.Logger.ForType<AuthorizationCodeInstalledApp>();
 
         private readonly IAuthorizationCodeFlow flow;
         private readonly ICodeReceiver codeReceiver;
@@ -64,8 +67,10 @@ namespace Google.Apis.Auth.OAuth2
         /// <inheritdoc/>
         public async Task<UserCredential> AuthorizeAsync(string userId, CancellationToken taskCancellationToken)
         {
+            Debug.Log("In Google AuthorizeAsync");
             // Try to load a token from the data store.
-            var token = await Flow.LoadTokenAsync(userId, taskCancellationToken).ConfigureAwait(false);
+            //var token = await Flow.LoadTokenAsync(userId, taskCancellationToken).ConfigureAwait(false);
+            var token = await Flow.LoadTokenAsync(userId, taskCancellationToken).AsUniTask();
 
             // Check if a new authorization code is needed.
             if (ShouldRequestAuthorizationCode(token))
@@ -101,6 +106,10 @@ namespace Google.Apis.Auth.OAuth2
         /// </summary>
         public bool ShouldRequestAuthorizationCode(TokenResponse token)
         {
+            Debug.Log("Checking to request authorization code");
+            Debug.Log(Flow.ShouldForceTokenRetrieval());
+            Debug.Log(token == null);
+            Debug.Log(token.RefreshToken == null && token.IsExpired(flow.Clock));
             // TODO: This code should be shared between this class and AuthorizationCodeWebApp.
             // If the flow includes a parameter that requires a new token, if the stored token is null or it doesn't
             // have a refresh token and the access token is expired we need to retrieve a new authorization code.

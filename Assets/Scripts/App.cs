@@ -321,8 +321,8 @@ namespace TiltBrush
         private DriveSync m_DriveSync;
         private GoogleUserSettings m_GoogleUserSettings;
 
-        [DllImport("__Internal")]
-        private static extern void _OpenURL(string url);
+        [DllImport("__Internal")] private static extern void _OpenURL(string url);
+        [DllImport("__Internal")] private static extern void _OpenAuthURL(string url, string id, string secret);
 
         // ------------------------------------------------------------
         // Properties
@@ -2178,7 +2178,7 @@ namespace TiltBrush
         // By executing the URL directly windows will open it without making the browser a child
         // process of Tilt Brush.  If this fails or throws an exception we fall back to Unity's
         // OpenURL().
-        public static void OpenURL(string url)
+        public static void OpenURL(string url, bool isAuth = false)
         {
             var isPolyUrl = (url.Contains("poly.google.com/") || url.Contains("vr.google.com"));
             if (isPolyUrl && GoogleIdentity.LoggedIn)
@@ -2186,31 +2186,25 @@ namespace TiltBrush
                 var email = GoogleIdentity.Profile.email;
                 url = $"https://accounts.google.com/AccountChooser?Email={email}&continue={url}";
             }
-#if UNITY_STANDALONE_WINDOWS
-    var startInfo = new System.Diagnostics.ProcessStartInfo(url);
-    startInfo.UseShellExecute = true;
-    try {
-      if (System.Diagnostics.Process.Start(startInfo) == null) {
-        Application.OpenURL(url);
-      }
-    } catch (Exception) {
-      Application.OpenURL(url);
-    }
-#else
-            // Something about the url makes OpenURL() not work on OSX, so use a workaround
-            if (Application.platform == RuntimePlatform.OSXEditor ||
-                Application.platform == RuntimePlatform.OSXPlayer)
+            else if (isAuth)
             {
-                System.Diagnostics.Process.Start(url);
+                string id = Config.Secrets[SecretsConfig.Service.Google].ClientId;
+                string secret = Config.Secrets[SecretsConfig.Service.Google].ClientSecret;
+                string authURL = "https://accounts.google.com/o/oauth2/v2/auth?"
+                    + "scope=https://www.googleapis.com/auth/userinfo.profile&https://www.googleapis.com/auth/userinfo.email&https://www.googleapis.com/auth/vrassetdata.readonly&https://www.googleapis.com/auth/drive.file&https://www.googleapis.com/auth/drive.appdata&"
+                    + "access_type=offline&"
+                    + "include_granted_scopes=true&"
+                    + "response_type=code&"
+                    + "redirect_uri=https%3A//localhost:8000/authorize&"
+                    + "client_id=" + id;
+                _OpenAuthURL(authURL, id, secret);
             }
             else
             {
                 Debug.Log("Attempting to open " + url);
                 _OpenURL(url);
             }
-#endif
-        }
-
+        }        
 
     }  // class App
 }  // namespace TiltBrush

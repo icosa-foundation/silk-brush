@@ -274,7 +274,7 @@ public class AudioManager : MonoBehaviour {
     }
     for (int i = 0; i < m_AudioLoops.Length; i++) {
       if (m_AudioLoops[i].m_LoopName == sLoopName) {
-        //m_AudioLoops[i].m_GvrAudioSource.volume = fVolume;
+        m_AudioLoops[i].m_AudioSource.volume = fVolume;
         return;
       }
     }

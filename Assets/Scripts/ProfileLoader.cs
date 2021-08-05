@@ -66,6 +66,9 @@ namespace TiltBrush
                     return ControllerStyle.Knuckles;
                 case "hand":
                     return ControllerStyle.Hand;
+                case null:
+                    Debug.Log("Profile is null, assuming Oculus Link");
+                    return ControllerStyle.OculusTouch;
                 default:
                     Debug.Log("Uh oh. It looks like your current profile (" + profile + ") isn't supported. Defaulting to WMR style.");
                     return ControllerStyle.Wmr;

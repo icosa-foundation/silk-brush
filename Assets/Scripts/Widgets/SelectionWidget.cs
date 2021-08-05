@@ -136,8 +136,7 @@ public class SelectionWidget : GrabWidget {
   //  }
   //}
 
-  override public float GetActivationScore(
-      Vector3 vControllerPos_GS, InputManager.ControllerName name) {
+  override public float GetActivationScore(Vector3 vControllerPos_GS, InputManager.ControllerName name) {
     if (!PointInCollider(vControllerPos_GS)) {
       return -1;
     }
