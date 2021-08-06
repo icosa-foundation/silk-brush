@@ -614,7 +614,7 @@ public class AudioManager : MonoBehaviour {
     m_ActiveGameMusicIndex = -1;
   }
 
-  public void TriggerOneShot(AudioClip rClip, Vector3 vPos, float fVolume,
+  public void TriggerOneShot(AudioClip rClip, Vector3 vPos, float fVolume,      
       float fSpatialBlend = 1.0f, float fGain = 0.0f) {
     if (Enabled) {
       m_AudioOneShots[m_NextAvailableAudioOneShot].gameObject.SetActive(true);

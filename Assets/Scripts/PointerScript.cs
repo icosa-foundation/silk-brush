@@ -960,6 +960,8 @@ public class PointerScript : MonoBehaviour {
   }
 
   public void SetAudioClipForPlayback() {
+    Debug.Log("SetAudioClipForPlayback called");
+    foreach (AudioSource source in m_AudioSources) { Debug.Log("Source: " + source.name); }
     for (int i=0; i<m_AudioSources.Length; i++) {
       m_AudioSources[i].Stop();
     }
