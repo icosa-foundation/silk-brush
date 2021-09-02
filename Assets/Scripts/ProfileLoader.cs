@@ -61,6 +61,7 @@ namespace TiltBrush
                 case "oculus-touch":
                 case "oculus-touch-v2":
                 case "oculus-touch-v3":
+                case "generic-trigger-squeeze-thumbstick":
                     return ControllerStyle.OculusTouch;
                 case "valve-index":
                     return ControllerStyle.Knuckles;

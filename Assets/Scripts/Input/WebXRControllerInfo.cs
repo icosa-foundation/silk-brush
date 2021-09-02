@@ -10,6 +10,8 @@ namespace TiltBrush
         private bool m_IsValid = true;
         public WebXRController controller;
 
+        public override bool IsTrackedObjectValid { get { return m_IsValid; } set { m_IsValid = value; } }
+
         public WebXRControllerInfo(BaseControllerBehavior behavior, bool isLeftHand) : base(behavior)
         {
             if (isLeftHand)
@@ -89,8 +91,6 @@ namespace TiltBrush
                     throw new System.NotImplementedException(); // Ask De-Panther about adding a WebXRController.ButtonTypes.None
             }
         }
-
-        public override bool IsTrackedObjectValid { get { return m_IsValid; } set { m_IsValid = value; } }
 
         public override float GetGripValue()
         {

@@ -608,7 +608,6 @@ GameObject:
   - component: {fileID: 1128511511}
   - component: {fileID: 12781057}
   - component: {fileID: 12781056}
-  - component: {fileID: 12781055}
   - component: {fileID: 12781054}
   m_Layer: 14
   m_Name: Text
@@ -710,15 +709,6 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
---- !u!222 &12781055
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 222054925195418854, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
-    type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 12781053}
-  m_CullTransparentMesh: 0
 --- !u!33 &12781056
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2200,7 +2190,6 @@ GameObject:
   - component: {fileID: 1805280918}
   - component: {fileID: 103787546}
   - component: {fileID: 103787548}
-  - component: {fileID: 103787547}
   - component: {fileID: 129869458}
   m_Layer: 14
   m_Name: TimeBarText
@@ -2251,15 +2240,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &103787547
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 222054925195418854, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
-    type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103787545}
-  m_CullTransparentMesh: 0
 --- !u!33 &103787548
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2668,7 +2648,6 @@ GameObject:
   - component: {fileID: 482334190}
   - component: {fileID: 130210068}
   - component: {fileID: 130210067}
-  - component: {fileID: 130210066}
   - component: {fileID: 130210065}
   m_Layer: 14
   m_Name: Text
@@ -2770,15 +2749,6 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
---- !u!222 &130210066
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 222054925195418854, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
-    type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130210064}
-  m_CullTransparentMesh: 0
 --- !u!33 &130210067
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5043,7 +5013,6 @@ GameObject:
   - component: {fileID: 261597287}
   - component: {fileID: 261597284}
   - component: {fileID: 261597286}
-  - component: {fileID: 261597285}
   - component: {fileID: 2040347685}
   m_Layer: 14
   m_Name: YouTubeEmail
@@ -5094,15 +5063,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &261597285
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 222054925195418854, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
-    type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 261597283}
-  m_CullTransparentMesh: 0
 --- !u!33 &261597286
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5355,7 +5315,6 @@ GameObject:
   - component: {fileID: 1392524033}
   - component: {fileID: 271027829}
   - component: {fileID: 271027828}
-  - component: {fileID: 271027827}
   - component: {fileID: 271027826}
   m_Layer: 14
   m_Name: Text
@@ -5459,15 +5418,6 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
---- !u!222 &271027827
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 222054925195418854, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
-    type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271027825}
-  m_CullTransparentMesh: 0
 --- !u!33 &271027828
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8283,7 +8233,6 @@ GameObject:
   - component: {fileID: 116898358}
   - component: {fileID: 512959152}
   - component: {fileID: 512959154}
-  - component: {fileID: 512959153}
   - component: {fileID: 413759583}
   m_Layer: 14
   m_Name: AudioTextHeader
@@ -8334,15 +8283,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &512959153
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 222054925195418854, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
-    type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512959151}
-  m_CullTransparentMesh: 0
 --- !u!33 &512959154
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10732,7 +10672,6 @@ GameObject:
   - component: {fileID: 892450094}
   - component: {fileID: 745882611}
   - component: {fileID: 745882613}
-  - component: {fileID: 745882612}
   - component: {fileID: 1577979162}
   m_Layer: 14
   m_Name: AudioTextDesc
@@ -10783,15 +10722,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &745882612
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 222054925195418854, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
-    type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 745882610}
-  m_CullTransparentMesh: 0
 --- !u!33 &745882613
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11617,7 +11547,6 @@ GameObject:
   - component: {fileID: 2081414898}
   - component: {fileID: 825726041}
   - component: {fileID: 825726040}
-  - component: {fileID: 825726039}
   - component: {fileID: 825726038}
   - component: {fileID: 825726037}
   m_Layer: 14
@@ -11733,15 +11662,6 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
---- !u!222 &825726039
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 222054925195418854, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
-    type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 825726036}
-  m_CullTransparentMesh: 0
 --- !u!33 &825726040
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15760,7 +15680,6 @@ GameObject:
   - component: {fileID: 345564295}
   - component: {fileID: 1277487074}
   - component: {fileID: 1277487076}
-  - component: {fileID: 1277487075}
   - component: {fileID: 1629108416}
   m_Layer: 14
   m_Name: Text
@@ -15811,15 +15730,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &1277487075
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 222054925195418854, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
-    type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1277487073}
-  m_CullTransparentMesh: 0
 --- !u!33 &1277487076
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16432,7 +16342,6 @@ GameObject:
   - component: {fileID: 1317145831}
   - component: {fileID: 1317145830}
   - component: {fileID: 2129205351}
-  - component: {fileID: 1317145832}
   m_Layer: 14
   m_Name: TimeCodeText
   m_TagString: Untagged
@@ -16491,14 +16400,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &1317145832
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317145829}
-  m_CullTransparentMesh: 0
 --- !u!1001 &1318324095
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29194,7 +29095,6 @@ GameObject:
   - component: {fileID: 581738633}
   - component: {fileID: 1877187485}
   - component: {fileID: 1877187484}
-  - component: {fileID: 1877187483}
   - component: {fileID: 581738634}
   m_Layer: 14
   m_Name: YouTubeProfile
@@ -29203,15 +29103,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!222 &1877187483
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 222054925195418854, guid: f636b2bdcf1c7f5498e324d362ac1ba8,
-    type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1877187482}
-  m_CullTransparentMesh: 0
 --- !u!33 &1877187484
 MeshFilter:
   m_ObjectHideFlags: 0
